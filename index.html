@@ -91,6 +91,29 @@
     .chip-orange { color:var(--p4); border-color:rgba(247,151,30,.35);  background:rgba(247,151,30,.08); }
     .chip-teal   { color:var(--p5); border-color:rgba(56,249,215,.35);  background:rgba(56,249,215,.08); }
 
+    /* HIGHLIGHT */
+    mark {
+      background: linear-gradient(120deg, rgba(247,151,30,.4) 0%, rgba(255,101,132,.3) 100%);
+      color: #fde68a; border-radius: 3px; padding: 1px 5px; font-weight: 600;
+      -webkit-text-fill-color: #fde68a;
+    }
+    .stats-row { display:flex; flex-wrap:wrap; gap:14px; margin-top:28px; }
+    .highlight-stat {
+      display:inline-flex; flex-direction:column; align-items:center;
+      background:var(--card); border:1px solid var(--border);
+      border-radius:12px; padding:16px 24px; min-width:110px;
+      transition:border-color .2s,transform .2s;
+    }
+    .highlight-stat:hover { border-color:var(--p4); transform:translateY(-3px); }
+    .highlight-stat .stat-num { font-size:2rem; font-weight:800; background:linear-gradient(90deg,var(--p4),var(--p2)); -webkit-background-clip:text; -webkit-text-fill-color:transparent; line-height:1; }
+    .highlight-stat .stat-label { font-size:.68rem; color:var(--muted); margin-top:4px; text-align:center; letter-spacing:.5px; text-transform:uppercase; }
+    .tl-highlight {
+      display:inline-block; background:linear-gradient(90deg,rgba(108,99,255,.15),rgba(255,101,132,.1));
+      border-left:3px solid var(--p1); border-radius:0 8px 8px 0;
+      padding:8px 14px; margin:10px 0 6px; font-size:.82rem; color:var(--p5);
+      font-weight:600; letter-spacing:.3px;
+    }
+
     /* SECTION */
     section { padding: 96px 48px; }
     .section-inner { max-width: 1100px; margin: 0 auto; }
@@ -247,14 +270,20 @@
       <div class="about-info">
         <h3>Abhilash B</h3>
         <div class="sub">Senior Full-Stack Engineer · Bengaluru, India</div>
-        <p>Full-stack software engineer with 9+ years at SAP Labs India, specializing in building enterprise-grade cloud-native applications on SAP BTP. Currently designing and developing product platform tools — the PLD (Product Landscape Designer) and CPSE (Cross Product Stack Editor) — used across SAP's global enterprise customer base.</p>
-        <p>Experienced across consulting and product engineering with a strong track record in solution design, cross-functional collaboration, and technical mentorship. Actively growing toward a Tech Lead / Architect role.</p>
+        <p>Full-stack software engineer with <mark>9+ years</mark> at SAP Labs India, specializing in building enterprise-grade cloud-native applications on SAP BTP. Currently designing and developing product platform tools — the <mark>PLD (Product Landscape Designer)</mark> and <mark>CPSE (Cross Product Stack Editor)</mark> — used across SAP's global enterprise customer base.</p>
+        <p>Experienced across consulting and product engineering with a strong track record in solution design, cross-functional collaboration, and technical mentorship. Actively growing toward a <mark>Tech Lead / Architect</mark> role. Coding is a hobby — worked on many independent projects alongside enterprise work.</p>
         <div class="about-meta">
           <div class="meta-item"><span class="meta-label">Location</span><span class="meta-value">Bengaluru, India</span></div>
           <div class="meta-item"><span class="meta-label">Company</span><span class="meta-value">SAP Labs India</span></div>
           <div class="meta-item"><span class="meta-label">Experience</span><span class="meta-value">9+ Years</span></div>
           <div class="meta-item"><span class="meta-label">Mode</span><span class="meta-value">Hybrid</span></div>
           <div class="meta-item"><span class="meta-label">Target</span><span class="meta-value">Tech Lead / Architect</span></div>
+        </div>
+        <div class="stats-row">
+          <div class="highlight-stat"><span class="stat-num">9+</span><span class="stat-label">Years Exp.</span></div>
+          <div class="highlight-stat"><span class="stat-num">4</span><span class="stat-label">Companies</span></div>
+          <div class="highlight-stat"><span class="stat-num">10+</span><span class="stat-label">Projects</span></div>
+          <div class="highlight-stat"><span class="stat-num">3</span><span class="stat-label">Countries</span></div>
         </div>
       </div>
     </div>
@@ -301,6 +330,7 @@
           <span class="skill-tag chip-purple">JavaScript ES6+</span>
           <span class="skill-tag chip-purple">HTML5 / CSS3</span>
           <span class="skill-tag chip-purple">jQuery</span>
+          <span class="skill-tag chip-purple">HighChart.js</span>
         </div>
       </div>
 
@@ -336,8 +366,159 @@
   <div class="section-inner">
     <div class="section-label">// 03. experience</div>
     <h2 class="section-title">Professional Experience</h2>
-    <p class="section-sub">Building enterprise-scale SAP products and consulting for global clients.</p>
+    <p class="section-sub">9+ years across product engineering, consulting, and enterprise SAP development.</p>
     <div class="timeline">
+
+      <!-- SAP Labs -->
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="tl-card">
+          <div class="tl-header">
+            <div>
+              <div class="tl-title">Developer (Full-Stack)</div>
+              <div class="tl-company">SAP Labs India</div>
+            </div>
+            <span class="tl-period">Dec 2021 – Present</span>
+          </div>
+          <div class="tl-location">Bengaluru, India · Hybrid</div>
+          <div class="tl-highlight">🗺️ Product Landscape Designer (PLD) / Cross Product Stack Editor (CPSE)</div>
+          <ul class="tl-list">
+            <li>Designed and developed <mark>cloud-native full-stack features</mark> for CPSE, an enterprise tool managing product stack lifecycles across SAP's global customer base.</li>
+            <li>Built and maintained <mark>REST APIs and backend services</mark> using Node.js and SAP CAP, supporting complex enterprise workflows at scale on SAP BTP Cloud Foundry.</li>
+            <li>Developed responsive SAP UI5 frontends collaborating closely with UX designers and product owners to deliver standards-compliant interfaces.</li>
+            <li>Architected <mark>SAP HANA HDI database layers</mark>, ensuring performant data models for enterprise-scale operations.</li>
+            <li>Established and maintained <mark>CI/CD pipelines using GitHub Actions</mark>, improving deployment reliability and release cadence.</li>
+            <li>Built automated test suites using QUnit, Jest, Bruno, wdi5, and QMate — covering unit, integration, and end-to-end scenarios.</li>
+            <li>Participated in solution design, architecture reviews, and cross-team alignment with global engineering teams.</li>
+            <li>Leveraged <mark>AI-assisted development tools</mark> (Claude, ChatGPT) to accelerate delivery, debugging, and test coverage.</li>
+          </ul>
+          <div class="tl-highlight">🌐 Intelligent Landscape Management (ILM)</div>
+          <ul class="tl-list">
+            <li>Contributed to enterprise landscape management solutions within SAP's Landscape Management portfolio.</li>
+            <li>Delivered feature enhancements, defect fixes, and release support across the full SDLC.</li>
+          </ul>
+          <div class="tl-tags">
+            <span class="tl-tag">SAP UI5</span><span class="tl-tag">CAP / CDS</span><span class="tl-tag">Node.js</span>
+            <span class="tl-tag">TypeScript</span><span class="tl-tag">HANA HDI</span><span class="tl-tag">OData V4</span>
+            <span class="tl-tag">GitHub Actions</span><span class="tl-tag">SAP BTP</span><span class="tl-tag">Cloud Foundry</span>
+            <span class="tl-tag">Jest</span><span class="tl-tag">wdi5</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Capgemini -->
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="tl-card">
+          <div class="tl-header">
+            <div>
+              <div class="tl-title">Senior Consultant</div>
+              <div class="tl-company">Capgemini India</div>
+            </div>
+            <span class="tl-period">Jul 2020 – Dec 2021</span>
+          </div>
+          <div class="tl-location">Bengaluru, India · On-site · Client: Daimler (Mercedes-Benz R&amp;D India)</div>
+          <div class="tl-highlight">🚗 Project: MIA Gateway Services — Jul 2020 – Dec 2021</div>
+          <ul class="tl-list">
+            <li>Implemented <mark>OAuth 2.0 (OIDC)</mark> for the SAP Fiori Launchpad, securing enterprise authentication flows for Mercedes-Benz R&amp;D India.</li>
+            <li>Developed and delivered custom Fiori applications adhering to SAP Fiori design standards for Daimler's internal teams.</li>
+            <li>Built a <mark>Test Automation Data Management</mark> tool, handling test data generation and triggering UFT test suites.</li>
+            <li>Developed custom <mark>Transport Management System</mark> to streamline SAP landscape operations.</li>
+            <li>Developed Frontend Prototype in short span for Business Proposals demos.</li>
+            <li>Trained and mentored junior team members on SAP UI5 and Fiori best practices.</li>
+          </ul>
+          <div class="tl-tags">
+            <span class="tl-tag">SAP UI5</span><span class="tl-tag">SAP Fiori</span><span class="tl-tag">OAuth 2.0</span>
+            <span class="tl-tag">OIDC</span><span class="tl-tag">UFT</span><span class="tl-tag">JavaScript</span><span class="tl-tag">oData</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Infosys -->
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="tl-card">
+          <div class="tl-header">
+            <div>
+              <div class="tl-title">Associate Consultant</div>
+              <div class="tl-company">Infosys Limited</div>
+            </div>
+            <span class="tl-period">Aug 2018 – Jun 2020</span>
+          </div>
+          <div class="tl-location">Bengaluru, India · On-site · Client: Daimler (Mercedes-Benz R&amp;D India)</div>
+
+          <div class="tl-highlight">🚗 Project: Mercedes Benz Financial Services (Fiori) — Nov 2018 – Jun 2020</div>
+          <ul class="tl-list">
+            <li><mark>Fiori Implementation for MBFS</mark> along with multiple Custom Fiori Applications.</li>
+            <li>Requirement Gathering, Design Analysis; extending Fiori Launchpad Plugins.</li>
+            <li>Developing Custom Fiori Applications, Testing and Bug Fixing.</li>
+            <li>Deploying applications, configuring <mark>Fiori Launchpad Tiles</mark>, creating Roles and Catalogs in Client Environment.</li>
+            <li>Integrating Frontend with <mark>Backend Net Weaver oData Services</mark>.</li>
+            <li>Extending Standard SAP Fiori Application; reviewing, optimising and building reusable code.</li>
+            <li>Building JavaScript Library for reusable UI components; developing oData Services.</li>
+            <li>Integrating external API with Fiori Applications.</li>
+          </ul>
+
+          <div class="tl-highlight">💳 Project: Approve Payment Proposal — Aug 2018 – Nov 2018</div>
+          <ul class="tl-list">
+            <li>Finance Application to <mark>Approve Policy Payments</mark> for Daimler's enterprise finance workflow.</li>
+            <li>Requirement Gathering, Design Analysis; developing Custom Fiori Application, Testing and Bug Fixing.</li>
+            <li>Deploying application, configuring Fiori Launchpad, creating Roles &amp; Catalogs in Client Environment.</li>
+            <li>Integrating Frontend with Backend Net Weaver oData Services; extending Standard SAP UI5 Controls.</li>
+            <li>Building JavaScript Library for reusable UI components.</li>
+          </ul>
+
+          <div class="tl-tags">
+            <span class="tl-tag">SAP Fiori</span><span class="tl-tag">SAP UI5</span><span class="tl-tag">JavaScript</span>
+            <span class="tl-tag">HTML / CSS</span><span class="tl-tag">oData</span><span class="tl-tag">NetWeaver</span>
+            <span class="tl-tag">Fiori Launchpad</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- TCS -->
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="tl-card">
+          <div class="tl-header">
+            <div>
+              <div class="tl-title">System Engineer</div>
+              <div class="tl-company">Tata Consultancy Services (TCS)</div>
+            </div>
+            <span class="tl-period">Nov 2015 – Jul 2018</span>
+          </div>
+          <div class="tl-location">India</div>
+
+          <div class="tl-highlight">🛒 Project: Optumera™ Competitive Pricing — Jumbo (Netherlands) · Jan 2016 – Jul 2018</div>
+          <ul class="tl-list">
+            <li><mark>TCS Product</mark> for deriving competitive pricing for Retailers — deployed for Jumbo, Netherlands.</li>
+            <li>Developing Custom Fiori Application, Testing and Bug Fixing.</li>
+            <li>Deploying application, configuring <mark>Fiori Launchpad Tiles</mark>, creating Roles &amp; Catalogs in Client Environment.</li>
+            <li>Integrating and customizing jQuery Plugins; integrating Frontend with Backend Net Weaver oData Services.</li>
+            <li>Extending Standard SAP UI5 Controls; developing various Custom Fiori applications as part of Complete Product Implementation.</li>
+            <li><mark>Developing HybridMobile app using Cordova</mark>; reviewing, optimising and building reusable code.</li>
+          </ul>
+
+          <div class="tl-highlight">🏫 Project: Retail SAP Centre of Excellence — TCS Internal R&amp;D · Nov 2015 – Jan 2016</div>
+          <ul class="tl-list">
+            <li>SAP Centre of Excellence — group guiding strategy, service offering development, and overall growth of TCS's SAP consulting, implementation and maintenance services.</li>
+            <li><mark>Pioneered Cordova Hybrid Mobile App</mark> development team at SAP Center of Excellence.</li>
+            <li>Developing Frontend, Testing and Bug Fixing; extending and customising Standard SAP Fiori apps.</li>
+            <li>Building Prototype for Business Proposals; actively taking part in product implementation.</li>
+          </ul>
+
+          <div class="tl-tags">
+            <span class="tl-tag">SAP Fiori</span><span class="tl-tag">SAP UI5</span><span class="tl-tag">JavaScript</span>
+            <span class="tl-tag">HTML / CSS</span><span class="tl-tag">Cordova</span><span class="tl-tag">jQuery</span>
+            <span class="tl-tag">OpenUI5</span><span class="tl-tag">Java</span><span class="tl-tag">Node.js</span>
+            <span class="tl-tag">MongoDB</span><span class="tl-tag">oData</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
 
       <!-- SAP Labs -->
       <div class="timeline-item">
@@ -354,14 +535,14 @@
 
           <div class="tl-sub">Product Landscape Designer (PLD) / Cross Product Stack Editor (CPSE)</div>
           <ul class="tl-list">
-            <li>Designed and developed cloud-native full-stack features for CPSE, an enterprise tool managing product stack lifecycles across SAP's global customer base.</li>
-            <li>Built and maintained REST APIs and backend services using Node.js and SAP CAP, supporting complex enterprise workflows at scale on SAP BTP Cloud Foundry.</li>
+            <li>Designed and developed <mark>cloud-native full-stack features</mark> for CPSE, an enterprise tool managing product stack lifecycles across SAP's global customer base.</li>
+            <li>Built and maintained <mark>REST APIs and backend services</mark> using Node.js and SAP CAP, supporting complex enterprise workflows at scale on SAP BTP Cloud Foundry.</li>
             <li>Developed responsive SAP UI5 frontends collaborating closely with UX designers and product owners to deliver standards-compliant interfaces.</li>
-            <li>Architected SAP HANA HDI database layers, ensuring performant data models for enterprise-scale operations.</li>
-            <li>Established and maintained CI/CD pipelines using GitHub Actions, improving deployment reliability and release cadence.</li>
+            <li>Architected <mark>SAP HANA HDI database layers</mark>, ensuring performant data models for enterprise-scale operations.</li>
+            <li>Established and maintained <mark>CI/CD pipelines using GitHub Actions</mark>, improving deployment reliability and release cadence.</li>
             <li>Built automated test suites using QUnit, Jest, Bruno, wdi5, and QMate — covering unit, integration, and end-to-end scenarios.</li>
             <li>Participated in solution design, architecture reviews, and cross-team alignment with global engineering teams.</li>
-            <li>Leveraged AI-assisted development tools (Claude, ChatGPT) to accelerate delivery, debugging, and test coverage.</li>
+            <li>Leveraged <mark>AI-assisted development tools</mark> (Claude, ChatGPT) to accelerate delivery, debugging, and test coverage.</li>
           </ul>
 
           <div class="tl-sub">Intelligent Landscape Management (ILM)</div>
@@ -388,32 +569,41 @@
 
       <!-- Capgemini -->
       <div class="timeline-item">
-        <div class="timeline-dot"></div>
-        <div class="tl-card">
-          <div class="tl-header">
-            <div>
-              <div class="tl-title">Senior Consultant</div>
-              <div class="tl-company">Capgemini India</div>
             </div>
-            <span class="tl-period">Jul 2020 – Dec 2021</span>
+            <span class="tl-period">Aug 2018 – Dec 2021</span>
           </div>
           <div class="tl-location">Bengaluru, India · On-site</div>
           <div class="tl-client">Client: Daimler (Mercedes-Benz R&amp;D India)</div>
+
+          <div class="tl-highlight">🚗 Project: MIA Gateway Services — Daimler · Jul 2020 – Dec 2021</div>
           <ul class="tl-list">
-            <li>Implemented OAuth 2.0 (OIDC) for the SAP Fiori Launchpad, securing enterprise authentication flows.</li>
+            <li>Implemented OAuth 2.0 (OIDC) for the SAP Fiori Launchpad, securing enterprise authentication flows for Mercedes-Benz R&amp;D India.</li>
             <li>Developed and delivered custom Fiori applications adhering to SAP Fiori design standards for Daimler's internal teams.</li>
-            <li>Built a Test Automation Data Management tool, handling test data generation and triggering UFT test suites.</li>
-            <li>Developed custom Transport Management System to streamline SAP landscape operations.</li>
+            <li>Built a <mark>Test Automation Data Management</mark> tool, handling test data generation and triggering UFT test suites.</li>
+            <li>Developed custom <mark>Transport Management System</mark> to streamline SAP landscape operations.</li>
+            <li>Actively taking part in product development for Daimler; developed Frontend Prototype in short span for Business Proposals demos.</li>
             <li>Trained and mentored junior team members on SAP UI5 and Fiori development best practices.</li>
           </ul>
+
+          <div class="tl-highlight">🏢 Internal Projects — Aug 2018 – Jun 2020</div>
+          <ul class="tl-list">
+            <li>Developed SAP Fiori and UI5 applications for various enterprise clients across consulting engagements.</li>
+            <li>Built interactive data visualisation dashboards using <mark>HighChart.js</mark> integrated with OData services.</li>
+            <li>Implemented OAuth 2.0 and Cordova-based hybrid mobile applications for enterprise use cases.</li>
+            <li>Collaborated with cross-functional teams to deliver SAP BTP cloud solutions.</li>
+          </ul>
+
           <div class="tl-tags">
             <span class="tl-tag">SAP UI5</span>
             <span class="tl-tag">SAP Fiori</span>
             <span class="tl-tag">OAuth 2.0</span>
             <span class="tl-tag">OIDC</span>
+            <span class="tl-tag">HighChart.js</span>
+            <span class="tl-tag">Cordova</span>
+            <span class="tl-tag">oData</span>
             <span class="tl-tag">UFT</span>
-            <span class="tl-tag">Transport Management</span>
-            <span class="tl-tag">Mentoring</span>
+            <span class="tl-tag">JavaScript</span>
+            <span class="tl-tag">MongoDB</span>
           </div>
         </div>
       </div>
