@@ -94,8 +94,8 @@
     /* HIGHLIGHT */
     mark {
       background: linear-gradient(120deg, rgba(247,151,30,.4) 0%, rgba(255,101,132,.3) 100%);
-      color: #fde68a; border-radius: 3px; padding: 1px 5px; font-weight: 600;
-      -webkit-text-fill-color: #fde68a;
+      color: #fff3b0; border-radius: 3px; padding: 1px 5px; font-weight: 600;
+      -webkit-text-fill-color: #fff3b0;
     }
     .stats-row { display:flex; flex-wrap:wrap; gap:14px; margin-top:28px; }
     .highlight-stat {
@@ -706,9 +706,9 @@
 
 <footer>&lt;built with ❤️ by Abhilash B · Bengaluru 2025 /&gt;</footer>
 
-<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js" integrity="sha256-BS9pFqIbpb4UA2ZDnoG4StETY8hN+6KgbyCMe0pvbV8=" crossorigin="anonymous"></script>
 <script>
-  emailjs.init('__EMAILJS_PUBLIC_KEY__');
+  emailjs.init('H3mGKA2mYprrNY7CG');
 
   async function handleForm(e) {
     e.preventDefault();
@@ -717,12 +717,13 @@
     btn.textContent = 'Sending…';
     btn.disabled = true;
     try {
-      await emailjs.sendForm('__EMAILJS_SERVICE_ID__', '__EMAILJS_TEMPLATE_ID__', e.target);
+      await emailjs.sendForm('service_0locfnm', 'template_i21r38x', e.target);
       msg.style.color = 'var(--p3)';
       msg.textContent = '✓ Message sent! I\'ll get back to you soon.';
       msg.style.display = 'block';
       e.target.reset();
     } catch(err) {
+      console.error('EmailJS error:', err);
       msg.style.color = 'var(--p2)';
       msg.textContent = '✗ Something went wrong. Please email me directly at abhilash.bbb@gmail.com';
       msg.style.display = 'block';
