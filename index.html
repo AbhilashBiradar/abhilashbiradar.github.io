@@ -706,13 +706,31 @@
 
 <footer>&lt;built with ❤️ by Abhilash B · Bengaluru 2025 /&gt;</footer>
 
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 <script>
-  function handleForm(e) {
+  emailjs.init('__EMAILJS_PUBLIC_KEY__');
+
+  async function handleForm(e) {
     e.preventDefault();
+    const btn = e.target.querySelector('.form-submit');
     const msg = document.getElementById('form-msg');
-    msg.style.display = 'block';
-    e.target.reset();
-    setTimeout(() => msg.style.display = 'none', 4000);
+    btn.textContent = 'Sending…';
+    btn.disabled = true;
+    try {
+      await emailjs.sendForm('__EMAILJS_SERVICE_ID__', '__EMAILJS_TEMPLATE_ID__', e.target);
+      msg.style.color = 'var(--p3)';
+      msg.textContent = '✓ Message sent! I\'ll get back to you soon.';
+      msg.style.display = 'block';
+      e.target.reset();
+    } catch(err) {
+      msg.style.color = 'var(--p2)';
+      msg.textContent = '✗ Something went wrong. Please email me directly at abhilash.bbb@gmail.com';
+      msg.style.display = 'block';
+    } finally {
+      btn.textContent = 'Send Message →';
+      btn.disabled = false;
+      setTimeout(() => msg.style.display = 'none', 6000);
+    }
   }
 
   const hamburger = document.getElementById('hamburger');
