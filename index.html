@@ -232,6 +232,7 @@
 
     /* ── MOBILE (max 640px) ── */
     @media(max-width:640px) {
+      .edu-grid { grid-template-columns: 1fr !important; }
       /* Nav */
       nav { padding:14px 20px; }
       .nav-links { display:none; }
@@ -305,6 +306,7 @@
     <li><a href="#skills">Skills</a></li>
     <li><a href="#experience">Experience</a></li>
     <li><a href="#projects">Projects</a></li>
+    <li><a href="#education">Education</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
   <button class="hamburger" id="hamburger" aria-label="Toggle menu">
@@ -316,6 +318,8 @@
   <a href="#skills" onclick="closeMenu()">Skills</a>
   <a href="#experience" onclick="closeMenu()">Experience</a>
   <a href="#projects" onclick="closeMenu()">Projects</a>
+  <a href="#education" onclick="closeMenu()">Education</a>
+  <a href="#volunteering" onclick="closeMenu()">Volunteering</a>
   <a href="#contact" onclick="closeMenu()">Contact</a>
 </div>
 
@@ -665,10 +669,75 @@
   </div>
 </section>
 
+<!-- EDUCATION & CERTIFICATIONS -->
+<section id="education" style="background:var(--bg2)">
+  <div class="section-inner">
+    <div class="section-label">// 05. education & certs</div>
+    <h2 class="section-title">Education & Certifications</h2>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:32px" class="edu-grid">
+
+      <!-- Education -->
+      <div>
+        <div style="font-size:.74rem;font-family:'Fira Code',monospace;color:var(--p3);letter-spacing:2px;text-transform:uppercase;margin-bottom:16px">🎓 Degree</div>
+        <div class="tl-card" style="border-left:3px solid var(--p3)">
+          <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:8px;margin-bottom:6px">
+            <div>
+              <div style="font-size:1rem;font-weight:700">B.E. — Electrical &amp; Electronics Engineering</div>
+              <div style="color:var(--p3);font-size:.82rem;font-weight:600;margin-top:3px">Reva Institute of Technology and Management, Bangalore</div>
+            </div>
+            <span class="tl-period">2011 – 2015</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Certifications -->
+      <div>
+        <div style="font-size:.74rem;font-family:'Fira Code',monospace;color:var(--p4);letter-spacing:2px;text-transform:uppercase;margin-bottom:16px">📜 Certifications</div>
+        <div class="tl-card" style="border-left:3px solid var(--p4)">
+          <ul class="tl-list">
+            <li><mark>Understanding SAP Fiori Launchpad</mark> — SAP / openSAP <span class="tl-period" style="display:inline-block;margin-left:8px">Mar 2017</span></li>
+            <li><mark>Foundation Web Development: JavaScript</mark> — Tata Consultancy Services <span class="tl-period" style="display:inline-block;margin-left:8px">Jun 2017</span></li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- VOLUNTEERING -->
+<section id="volunteering" style="background:var(--bg)">
+  <div class="section-inner">
+    <div class="section-label">// 06. volunteering</div>
+    <h2 class="section-title">Volunteering &amp; Activities</h2>
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:22px">
+
+      <div class="project-card" style="border-left:3px solid var(--p2)">
+        <div class="project-icon">🛡️</div>
+        <h3>Civil Defence Warden</h3>
+        <p>Indian Civil Defence — disaster relief and fire safety training. Active contributor to civil preparedness and community safety.</p>
+        <div class="project-tags">
+          <span class="project-tag chip-pink">Apr 2010 – Present</span>
+        </div>
+      </div>
+
+      <div class="project-card" style="border-left:3px solid var(--p5)">
+        <div class="project-icon">🪖</div>
+        <h3>Corporal — NCC India</h3>
+        <p>National Cadet Corps India — <mark>NCC 'C' Certificate</mark> holder and National Level Army Camp participant. Leadership and discipline training.</p>
+        <div class="project-tags">
+          <span class="project-tag chip-teal">2009 – 2012</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
 <!-- CONTACT -->
 <section id="contact">
   <div class="section-inner">
-    <div class="section-label">// 05. contact</div>
+    <div class="section-label">// 07. contact</div>
     <h2 class="section-title">Get In Touch</h2>
     <div class="contact-grid">
       <div class="contact-info">
@@ -694,9 +763,9 @@
         </div>
       </div>
       <form class="contact-form" onsubmit="handleForm(event)">
-        <div class="form-group"><label for="cf-name">YOUR NAME</label><input id="cf-name" type="text" placeholder="John Doe" required/></div>
-        <div class="form-group"><label for="cf-email">EMAIL</label><input id="cf-email" type="email" placeholder="john@example.com" required/></div>
-        <div class="form-group"><label for="cf-msg">MESSAGE</label><textarea id="cf-msg" rows="5" placeholder="Hi Abhilash, I'd like to..." required></textarea></div>
+        <div class="form-group"><label for="cf-name">YOUR NAME</label><input id="cf-name" name="from_name" type="text" placeholder="John Doe" required/></div>
+        <div class="form-group"><label for="cf-email">EMAIL</label><input id="cf-email" name="from_email" type="email" placeholder="john@example.com" required/></div>
+        <div class="form-group"><label for="cf-msg">MESSAGE</label><textarea id="cf-msg" name="message" rows="5" placeholder="Hi Abhilash, I'd like to..." required></textarea></div>
         <button type="submit" class="form-submit">Send Message &#8594;</button>
         <div id="form-msg" style="font-size:.82rem;color:var(--p3);display:none;text-align:center;">✓ Thanks! I'll get back to you soon.</div>
       </form>
