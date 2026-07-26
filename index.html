@@ -3,396 +3,202 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Abhilash Biradar — Fullstack Developer</title>
+  <title>Abhilash B — Senior Full-Stack Engineer</title>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet"/>
   <style>
     :root {
-      --bg:       #0b0f1a;
-      --bg2:      #111827;
-      --bg3:      #1a2236;
-      --border:   #1e2d45;
-      --p1:       #6c63ff;
-      --p2:       #ff6584;
-      --p3:       #43e97b;
-      --p4:       #f7971e;
-      --p5:       #38f9d7;
-      --text:     #e2e8f0;
-      --muted:    #64748b;
-      --card:     #131d2e;
+      --bg:     #0b0f1a;
+      --bg2:    #111827;
+      --bg3:    #1a2236;
+      --border: #1e2d45;
+      --p1:     #6c63ff;
+      --p2:     #ff6584;
+      --p3:     #43e97b;
+      --p4:     #f7971e;
+      --p5:     #38f9d7;
+      --text:   #e2e8f0;
+      --muted:  #64748b;
+      --card:   #131d2e;
     }
     *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
     html { scroll-behavior: smooth; }
     body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text); overflow-x: hidden; }
-
-    /* ── SCROLLBAR ── */
     ::-webkit-scrollbar { width: 6px; }
     ::-webkit-scrollbar-track { background: var(--bg); }
     ::-webkit-scrollbar-thumb { background: var(--p1); border-radius: 3px; }
 
-    /* ── NAV ── */
+    /* NAV */
     nav {
       position: fixed; top: 0; left: 0; right: 0; z-index: 100;
       display: flex; align-items: center; justify-content: space-between;
       padding: 16px 48px;
-      background: rgba(11,15,26,.85);
+      background: rgba(11,15,26,.88);
       backdrop-filter: blur(12px);
       border-bottom: 1px solid var(--border);
     }
-    .nav-logo {
-      font-family: 'Fira Code', monospace;
-      font-size: 1.1rem;
-      background: linear-gradient(90deg, var(--p1), var(--p2));
-      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-      font-weight: 500;
-    }
-    .nav-links { display: flex; gap: 32px; list-style: none; }
-    .nav-links a {
-      color: var(--muted); text-decoration: none; font-size: .85rem;
-      letter-spacing: .5px; transition: color .2s;
-    }
-    .nav-links a:hover { color: var(--text); }
+    .nav-logo { font-family:'Fira Code',monospace; font-size:1rem; background:linear-gradient(90deg,var(--p1),var(--p2)); -webkit-background-clip:text; -webkit-text-fill-color:transparent; font-weight:500; }
+    .nav-links { display:flex; gap:28px; list-style:none; }
+    .nav-links a { color:var(--muted); text-decoration:none; font-size:.83rem; letter-spacing:.5px; transition:color .2s; }
+    .nav-links a:hover { color:var(--text); }
 
-    /* ── HERO ── */
+    /* HERO */
     #hero {
       min-height: 100vh;
       display: flex; align-items: center; justify-content: center;
-      padding: 100px 48px 60px;
-      position: relative; overflow: hidden;
-      text-align: center;
+      padding: 120px 48px 80px;
+      position: relative; overflow: hidden; text-align: center;
     }
     .hero-bg {
       position: absolute; inset: 0; z-index: 0;
       background:
-        radial-gradient(ellipse at 20% 40%, rgba(108,99,255,.18) 0%, transparent 55%),
-        radial-gradient(ellipse at 80% 60%, rgba(255,101,132,.15) 0%, transparent 55%),
+        radial-gradient(ellipse at 20% 40%, rgba(108,99,255,.2) 0%, transparent 55%),
+        radial-gradient(ellipse at 80% 60%, rgba(255,101,132,.16) 0%, transparent 55%),
         radial-gradient(ellipse at 50% 100%, rgba(67,233,123,.1) 0%, transparent 50%);
     }
     .hero-grid {
       position: absolute; inset: 0; z-index: 0;
-      background-image:
-        linear-gradient(rgba(108,99,255,.04) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(108,99,255,.04) 1px, transparent 1px);
+      background-image: linear-gradient(rgba(108,99,255,.04) 1px,transparent 1px), linear-gradient(90deg,rgba(108,99,255,.04) 1px,transparent 1px);
       background-size: 48px 48px;
     }
-    .hero-inner { position: relative; z-index: 1; max-width: 780px; }
-    .hero-tag {
-      display: inline-block;
-      font-family: 'Fira Code', monospace;
-      font-size: .78rem;
-      color: var(--p3);
-      border: 1px solid rgba(67,233,123,.3);
-      border-radius: 20px;
-      padding: 5px 18px;
-      margin-bottom: 22px;
-      letter-spacing: 1px;
+    .hero-inner { position:relative; z-index:1; max-width:800px; }
+    .hero-tag { display:inline-block; font-family:'Fira Code',monospace; font-size:.76rem; color:var(--p3); border:1px solid rgba(67,233,123,.3); border-radius:20px; padding:5px 18px; margin-bottom:20px; letter-spacing:1px; }
+    .hero-inner h1 { font-size:clamp(2.6rem,6vw,4.4rem); font-weight:800; line-height:1.08; letter-spacing:-1.5px; margin-bottom:10px; }
+    .grad-text { background:linear-gradient(90deg,var(--p1) 0%,var(--p2) 45%,var(--p4) 100%); -webkit-background-clip:text; -webkit-text-fill-color:transparent; }
+    .hero-role { font-size:1.1rem; color:var(--muted); margin-bottom:10px; font-weight:400; }
+    .hero-role span { color:var(--p5); font-weight:600; }
+    .hero-contact-bar {
+      display: flex; flex-wrap: wrap; gap: 14px; justify-content: center;
+      margin: 18px 0 26px;
     }
-    .hero-inner h1 {
-      font-size: clamp(2.4rem, 6vw, 4.2rem);
-      font-weight: 800;
-      line-height: 1.1;
-      letter-spacing: -1px;
-      margin-bottom: 12px;
-    }
-    .grad-text {
-      background: linear-gradient(90deg, var(--p1) 0%, var(--p2) 40%, var(--p4) 100%);
-      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-    }
-    .hero-inner .role {
-      font-size: 1.15rem;
-      color: var(--muted);
-      margin-bottom: 24px;
-      font-weight: 400;
-    }
-    .hero-inner .role span { color: var(--p5); font-weight: 600; }
-    .hero-inner p {
-      font-size: 1rem;
-      color: #94a3b8;
-      line-height: 1.75;
-      max-width: 580px;
-      margin: 0 auto 36px;
-    }
-    .hero-btns { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
-    .btn-primary {
-      padding: 12px 32px;
-      background: linear-gradient(90deg, var(--p1), var(--p2));
-      color: #fff;
-      border-radius: 8px;
-      text-decoration: none;
-      font-weight: 600;
-      font-size: .9rem;
-      transition: opacity .2s, transform .2s;
-    }
-    .btn-primary:hover { opacity: .88; transform: translateY(-2px); }
-    .btn-outline {
-      padding: 12px 32px;
-      background: transparent;
-      border: 1px solid var(--border);
-      color: var(--text);
-      border-radius: 8px;
-      text-decoration: none;
-      font-weight: 500;
-      font-size: .9rem;
-      transition: border-color .2s, transform .2s;
-    }
-    .btn-outline:hover { border-color: var(--p1); transform: translateY(-2px); }
-    .hero-chips {
-      margin-top: 48px;
-      display: flex; gap: 10px; justify-content: center; flex-wrap: wrap;
-    }
-    .chip {
-      font-family: 'Fira Code', monospace;
-      font-size: .72rem;
-      padding: 5px 14px;
-      border-radius: 20px;
-      border: 1px solid;
-    }
-    .chip-purple { color: var(--p1); border-color: rgba(108,99,255,.35); background: rgba(108,99,255,.07); }
-    .chip-pink   { color: var(--p2); border-color: rgba(255,101,132,.35); background: rgba(255,101,132,.07); }
-    .chip-green  { color: var(--p3); border-color: rgba(67,233,123,.35);  background: rgba(67,233,123,.07);  }
-    .chip-orange { color: var(--p4); border-color: rgba(247,151,30,.35);  background: rgba(247,151,30,.07);  }
-    .chip-teal   { color: var(--p5); border-color: rgba(56,249,215,.35);  background: rgba(56,249,215,.07);  }
-
-    /* ── SECTION COMMON ── */
-    section { padding: 96px 48px; }
-    .section-inner { max-width: 1100px; margin: 0 auto; }
-    .section-label {
-      font-family: 'Fira Code', monospace;
-      font-size: .75rem;
-      color: var(--p1);
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      margin-bottom: 10px;
-    }
-    .section-title {
-      font-size: clamp(1.8rem, 3.5vw, 2.6rem);
-      font-weight: 800;
-      margin-bottom: 14px;
-      letter-spacing: -0.5px;
-    }
-    .section-sub { color: var(--muted); font-size: .95rem; line-height: 1.7; max-width: 580px; margin-bottom: 56px; }
-    .divider { width: 48px; height: 3px; border-radius: 2px; margin-bottom: 48px; }
-
-    /* ── ABOUT ── */
-    #about { background: var(--bg2); }
-    .about-grid { display: grid; grid-template-columns: 1fr 1.6fr; gap: 64px; align-items: center; }
-    .about-avatar-wrap {
-      position: relative;
-      display: flex; align-items: center; justify-content: center;
-    }
-    .about-avatar-bg {
-      width: 240px; height: 240px; border-radius: 50%;
-      background: linear-gradient(135deg, var(--p1) 0%, var(--p2) 50%, var(--p4) 100%);
-      display: flex; align-items: center; justify-content: center;
-      font-size: 6rem;
-      box-shadow: 0 0 60px rgba(108,99,255,.35);
-    }
-    .about-info h3 { font-size: 1.6rem; font-weight: 700; margin-bottom: 6px; }
-    .about-info .sub { color: var(--p5); font-size: .9rem; margin-bottom: 20px; font-family: 'Fira Code', monospace; }
-    .about-info p { color: #94a3b8; line-height: 1.8; margin-bottom: 16px; font-size: .95rem; }
-    .about-meta { display: flex; flex-wrap: wrap; gap: 16px; margin-top: 24px; }
-    .meta-item { display: flex; flex-direction: column; gap: 3px; }
-    .meta-label { font-size: .7rem; color: var(--muted); letter-spacing: 1px; text-transform: uppercase; }
-    .meta-value { font-size: .9rem; font-weight: 600; color: var(--text); }
-
-    /* ── EXPERIENCE ── */
-    #experience { background: var(--bg); }
-    .timeline { position: relative; padding-left: 28px; }
-    .timeline::before {
-      content: '';
-      position: absolute; left: 0; top: 8px; bottom: 8px; width: 2px;
-      background: linear-gradient(to bottom, var(--p1), var(--p2), var(--p4));
-      border-radius: 1px;
-    }
-    .timeline-item { position: relative; margin-bottom: 40px; }
-    .timeline-dot {
-      position: absolute; left: -35px; top: 6px;
-      width: 14px; height: 14px; border-radius: 50%;
-      background: linear-gradient(135deg, var(--p1), var(--p2));
-      box-shadow: 0 0 10px rgba(108,99,255,.5);
-    }
-    .tl-card {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 14px;
-      padding: 24px 28px;
-      transition: border-color .2s;
-    }
-    .tl-card:hover { border-color: var(--p1); }
-    .tl-header { display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 8px; margin-bottom: 8px; }
-    .tl-title { font-size: 1.05rem; font-weight: 700; }
-    .tl-company { color: var(--p1); font-size: .85rem; font-weight: 600; }
-    .tl-period {
-      font-family: 'Fira Code', monospace;
-      font-size: .72rem;
-      color: var(--muted);
-      background: var(--bg3);
-      padding: 4px 12px;
-      border-radius: 20px;
-      white-space: nowrap;
-    }
-    .tl-desc { color: #94a3b8; font-size: .88rem; line-height: 1.7; margin-top: 10px; }
-    .tl-tags { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 14px; }
-    .tl-tag {
-      font-size: .7rem;
-      padding: 3px 10px;
-      border-radius: 20px;
-      border: 1px solid var(--border);
-      color: var(--muted);
-      font-family: 'Fira Code', monospace;
-    }
-
-    /* ── SKILLS ── */
-    #skills { background: var(--bg2); }
-    .skills-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 24px; }
-    .skill-group {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 14px;
-      padding: 24px;
-      transition: border-color .2s, transform .2s;
-    }
-    .skill-group:hover { border-color: var(--p1); transform: translateY(-4px); }
-    .skill-group-title {
-      font-size: .8rem;
-      font-weight: 700;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-      margin-bottom: 18px;
-      display: flex; align-items: center; gap: 8px;
-    }
-    .sg-icon { font-size: 1.2rem; }
-    .skill-bar-wrap { margin-bottom: 14px; }
-    .skill-bar-label { display: flex; justify-content: space-between; margin-bottom: 6px; }
-    .skill-bar-label span:first-child { font-size: .83rem; color: var(--text); }
-    .skill-bar-label span:last-child { font-family: 'Fira Code', monospace; font-size: .72rem; color: var(--muted); }
-    .skill-bar-bg { height: 6px; background: var(--bg3); border-radius: 3px; overflow: hidden; }
-    .skill-bar-fill { height: 100%; border-radius: 3px; transition: width 1.2s ease; }
-
-    /* ── PROJECTS ── */
-    #projects { background: var(--bg); }
-    .projects-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 24px; }
-    .project-card {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      padding: 28px;
-      display: flex; flex-direction: column;
-      transition: border-color .2s, transform .2s;
-      position: relative;
-      overflow: hidden;
-    }
-    .project-card::before {
-      content: '';
-      position: absolute; top: 0; left: 0; right: 0; height: 3px;
-    }
-    .project-card:nth-child(1)::before { background: linear-gradient(90deg, var(--p1), var(--p2)); }
-    .project-card:nth-child(2)::before { background: linear-gradient(90deg, var(--p3), var(--p5)); }
-    .project-card:nth-child(3)::before { background: linear-gradient(90deg, var(--p4), var(--p2)); }
-    .project-card:nth-child(4)::before { background: linear-gradient(90deg, var(--p5), var(--p1)); }
-    .project-card:hover { border-color: var(--p1); transform: translateY(-6px); }
-    .project-icon { font-size: 2.2rem; margin-bottom: 14px; }
-    .project-card h3 { font-size: 1.05rem; font-weight: 700; margin-bottom: 8px; }
-    .project-card p { color: #94a3b8; font-size: .85rem; line-height: 1.7; flex: 1; margin-bottom: 18px; }
-    .project-tags { display: flex; flex-wrap: wrap; gap: 7px; margin-bottom: 18px; }
-    .project-tag {
-      font-size: .68rem;
-      font-family: 'Fira Code', monospace;
-      padding: 3px 10px;
-      border-radius: 20px;
-    }
-    .project-links { display: flex; gap: 12px; }
-    .project-link {
-      font-size: .78rem;
-      color: var(--p1);
-      text-decoration: none;
-      display: flex; align-items: center; gap: 4px;
+    .hero-contact-bar a {
+      color: #94a3b8; font-size: .78rem; text-decoration: none;
+      display: flex; align-items: center; gap: 5px;
       transition: color .2s;
     }
-    .project-link:hover { color: var(--p2); }
+    .hero-contact-bar a:hover { color: var(--p1); }
+    .hero-inner p { font-size:.95rem; color:#94a3b8; line-height:1.8; max-width:640px; margin:0 auto 32px; }
+    .hero-btns { display:flex; gap:12px; justify-content:center; flex-wrap:wrap; }
+    .btn-primary { padding:11px 28px; background:linear-gradient(90deg,var(--p1),var(--p2)); color:#fff; border-radius:8px; text-decoration:none; font-weight:600; font-size:.88rem; transition:opacity .2s,transform .2s; }
+    .btn-primary:hover { opacity:.88; transform:translateY(-2px); }
+    .btn-outline { padding:11px 28px; background:transparent; border:1px solid var(--border); color:var(--text); border-radius:8px; text-decoration:none; font-weight:500; font-size:.88rem; transition:border-color .2s,transform .2s; }
+    .btn-outline:hover { border-color:var(--p1); transform:translateY(-2px); }
+    .hero-chips { margin-top:40px; display:flex; gap:8px; justify-content:center; flex-wrap:wrap; }
+    .chip { font-family:'Fira Code',monospace; font-size:.7rem; padding:4px 13px; border-radius:20px; border:1px solid; }
+    .chip-purple { color:var(--p1); border-color:rgba(108,99,255,.35); background:rgba(108,99,255,.08); }
+    .chip-pink   { color:var(--p2); border-color:rgba(255,101,132,.35); background:rgba(255,101,132,.08); }
+    .chip-green  { color:var(--p3); border-color:rgba(67,233,123,.35);  background:rgba(67,233,123,.08); }
+    .chip-orange { color:var(--p4); border-color:rgba(247,151,30,.35);  background:rgba(247,151,30,.08); }
+    .chip-teal   { color:var(--p5); border-color:rgba(56,249,215,.35);  background:rgba(56,249,215,.08); }
 
-    /* ── CONTACT ── */
+    /* SECTION */
+    section { padding: 96px 48px; }
+    .section-inner { max-width: 1100px; margin: 0 auto; }
+    .section-label { font-family:'Fira Code',monospace; font-size:.74rem; color:var(--p1); letter-spacing:2px; text-transform:uppercase; margin-bottom:8px; }
+    .section-title { font-size:clamp(1.8rem,3.5vw,2.5rem); font-weight:800; margin-bottom:12px; letter-spacing:-.5px; }
+    .section-sub { color:var(--muted); font-size:.93rem; line-height:1.7; max-width:600px; margin-bottom:52px; }
+
+    /* ABOUT */
+    #about { background: var(--bg2); }
+    .about-grid { display:grid; grid-template-columns:1fr 1.7fr; gap:64px; align-items:center; }
+    .about-avatar-bg { width:220px; height:220px; border-radius:50%; background:linear-gradient(135deg,var(--p1) 0%,var(--p2) 50%,var(--p4) 100%); display:flex; align-items:center; justify-content:center; font-size:5.5rem; box-shadow:0 0 60px rgba(108,99,255,.35); margin:0 auto; }
+    .about-info h3 { font-size:1.55rem; font-weight:700; margin-bottom:4px; }
+    .about-info .sub { color:var(--p5); font-size:.82rem; margin-bottom:18px; font-family:'Fira Code',monospace; }
+    .about-info p { color:#94a3b8; line-height:1.8; margin-bottom:14px; font-size:.92rem; }
+    .about-meta { display:flex; flex-wrap:wrap; gap:20px; margin-top:22px; }
+    .meta-item { display:flex; flex-direction:column; gap:3px; }
+    .meta-label { font-size:.68rem; color:var(--muted); letter-spacing:1px; text-transform:uppercase; }
+    .meta-value { font-size:.88rem; font-weight:600; }
+
+    /* SKILLS */
+    #skills { background: var(--bg); }
+    .skills-section-grid { display:grid; grid-template-columns:1fr 1fr; gap:32px; margin-bottom:32px; }
+    .skills-row { display:grid; grid-template-columns:repeat(auto-fill,minmax(280px,1fr)); gap:24px; }
+    .skill-group { background:var(--card); border:1px solid var(--border); border-radius:14px; padding:22px; transition:border-color .2s,transform .2s; }
+    .skill-group:hover { border-color:var(--p1); transform:translateY(-3px); }
+    .skill-group-title { font-size:.76rem; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; margin-bottom:16px; display:flex; align-items:center; gap:8px; }
+    .sg-icon { font-size:1.1rem; }
+    .skill-tags { display:flex; flex-wrap:wrap; gap:7px; }
+    .skill-tag { font-family:'Fira Code',monospace; font-size:.7rem; padding:4px 11px; border-radius:20px; border:1px solid; }
+
+    /* EXPERIENCE */
+    #experience { background: var(--bg2); }
+    .timeline { position:relative; padding-left:26px; }
+    .timeline::before { content:''; position:absolute; left:0; top:8px; bottom:8px; width:2px; background:linear-gradient(to bottom,var(--p1),var(--p2),var(--p4)); border-radius:1px; }
+    .timeline-item { position:relative; margin-bottom:32px; }
+    .timeline-dot { position:absolute; left:-33px; top:7px; width:13px; height:13px; border-radius:50%; background:linear-gradient(135deg,var(--p1),var(--p2)); box-shadow:0 0 10px rgba(108,99,255,.5); }
+    .tl-card { background:var(--card); border:1px solid var(--border); border-radius:14px; padding:22px 26px; transition:border-color .2s; }
+    .tl-card:hover { border-color:var(--p1); }
+    .tl-header { display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:8px; margin-bottom:4px; }
+    .tl-title { font-size:1rem; font-weight:700; }
+    .tl-company { color:var(--p1); font-size:.82rem; font-weight:600; margin-bottom:2px; }
+    .tl-client { color:var(--muted); font-size:.76rem; font-style:italic; margin-bottom:10px; }
+    .tl-period { font-family:'Fira Code',monospace; font-size:.7rem; color:var(--muted); background:var(--bg3); padding:4px 11px; border-radius:20px; white-space:nowrap; }
+    .tl-location { font-size:.72rem; color:var(--muted); margin-bottom:10px; }
+    .tl-sub { font-size:.88rem; font-weight:600; color:var(--p4); margin:10px 0 6px; }
+    .tl-list { list-style:none; padding:0; }
+    .tl-list li { color:#94a3b8; font-size:.84rem; line-height:1.7; padding:3px 0 3px 16px; position:relative; }
+    .tl-list li::before { content:'›'; position:absolute; left:0; color:var(--p1); font-weight:700; }
+    .tl-tags { display:flex; flex-wrap:wrap; gap:6px; margin-top:14px; }
+    .tl-tag { font-size:.68rem; padding:3px 10px; border-radius:20px; border:1px solid var(--border); color:var(--muted); font-family:'Fira Code',monospace; }
+
+    /* PROJECTS */
+    #projects { background: var(--bg); }
+    .projects-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(300px,1fr)); gap:22px; }
+    .project-card { background:var(--card); border:1px solid var(--border); border-radius:16px; padding:26px; display:flex; flex-direction:column; transition:border-color .2s,transform .2s; position:relative; overflow:hidden; }
+    .project-card::before { content:''; position:absolute; top:0; left:0; right:0; height:3px; }
+    .project-card:nth-child(1)::before { background:linear-gradient(90deg,var(--p1),var(--p2)); }
+    .project-card:nth-child(2)::before { background:linear-gradient(90deg,var(--p3),var(--p5)); }
+    .project-card:nth-child(3)::before { background:linear-gradient(90deg,var(--p4),var(--p2)); }
+    .project-card:nth-child(4)::before { background:linear-gradient(90deg,var(--p5),var(--p1)); }
+    .project-card:hover { border-color:var(--p1); transform:translateY(-5px); }
+    .project-icon { font-size:2rem; margin-bottom:12px; }
+    .project-card h3 { font-size:1rem; font-weight:700; margin-bottom:7px; }
+    .project-card p { color:#94a3b8; font-size:.83rem; line-height:1.7; flex:1; margin-bottom:16px; }
+    .project-tags { display:flex; flex-wrap:wrap; gap:6px; margin-bottom:16px; }
+    .project-tag { font-size:.67rem; font-family:'Fira Code',monospace; padding:3px 10px; border-radius:20px; }
+    .project-links { display:flex; gap:12px; }
+    .project-link { font-size:.76rem; color:var(--p1); text-decoration:none; transition:color .2s; }
+    .project-link:hover { color:var(--p2); }
+
+    /* CONTACT */
     #contact { background: var(--bg2); }
-    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: start; }
-    .contact-info h3 { font-size: 1.5rem; font-weight: 700; margin-bottom: 12px; }
-    .contact-info p { color: #94a3b8; line-height: 1.8; margin-bottom: 28px; font-size: .95rem; }
-    .contact-links { display: flex; flex-direction: column; gap: 14px; }
-    .contact-item {
-      display: flex; align-items: center; gap: 14px;
-      padding: 14px 18px;
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      text-decoration: none;
-      color: var(--text);
-      transition: border-color .2s, transform .2s;
-    }
-    .contact-item:hover { border-color: var(--p1); transform: translateX(4px); }
-    .contact-icon {
-      width: 40px; height: 40px; border-radius: 10px;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 1.1rem; flex-shrink: 0;
-    }
-    .contact-item-text .label { font-size: .7rem; color: var(--muted); letter-spacing: .5px; margin-bottom: 2px; }
-    .contact-item-text .value { font-size: .9rem; font-weight: 600; }
-    .contact-form { display: flex; flex-direction: column; gap: 14px; }
-    .form-group { display: flex; flex-direction: column; gap: 6px; }
-    .form-group label { font-size: .78rem; color: var(--muted); letter-spacing: .5px; }
-    .form-group input, .form-group textarea {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      padding: 12px 16px;
-      color: var(--text);
-      font-family: 'Inter', sans-serif;
-      font-size: .9rem;
-      outline: none;
-      transition: border-color .2s;
-      resize: vertical;
-    }
-    .form-group input:focus, .form-group textarea:focus { border-color: var(--p1); }
-    .form-submit {
-      padding: 12px;
-      background: linear-gradient(90deg, var(--p1), var(--p2));
-      color: #fff;
-      font-weight: 700;
-      font-size: .9rem;
-      border: none;
-      border-radius: 10px;
-      cursor: pointer;
-      transition: opacity .2s;
-    }
-    .form-submit:hover { opacity: .88; }
+    .contact-grid { display:grid; grid-template-columns:1fr 1fr; gap:48px; align-items:start; }
+    .contact-info h3 { font-size:1.45rem; font-weight:700; margin-bottom:10px; }
+    .contact-info p { color:#94a3b8; line-height:1.8; margin-bottom:26px; font-size:.92rem; }
+    .contact-links { display:flex; flex-direction:column; gap:12px; }
+    .contact-item { display:flex; align-items:center; gap:12px; padding:13px 16px; background:var(--card); border:1px solid var(--border); border-radius:12px; text-decoration:none; color:var(--text); transition:border-color .2s,transform .2s; }
+    .contact-item:hover { border-color:var(--p1); transform:translateX(4px); }
+    .contact-icon { width:38px; height:38px; border-radius:9px; display:flex; align-items:center; justify-content:center; font-size:1rem; flex-shrink:0; font-weight:700; }
+    .contact-item-text .label { font-size:.68rem; color:var(--muted); letter-spacing:.5px; margin-bottom:2px; }
+    .contact-item-text .value { font-size:.86rem; font-weight:600; }
+    .contact-form { display:flex; flex-direction:column; gap:13px; }
+    .form-group { display:flex; flex-direction:column; gap:5px; }
+    .form-group label { font-size:.75rem; color:var(--muted); letter-spacing:.5px; }
+    .form-group input, .form-group textarea { background:var(--card); border:1px solid var(--border); border-radius:10px; padding:11px 14px; color:var(--text); font-family:'Inter',sans-serif; font-size:.88rem; outline:none; transition:border-color .2s; resize:vertical; }
+    .form-group input:focus, .form-group textarea:focus { border-color:var(--p1); }
+    .form-submit { padding:12px; background:linear-gradient(90deg,var(--p1),var(--p2)); color:#fff; font-weight:700; font-size:.88rem; border:none; border-radius:10px; cursor:pointer; transition:opacity .2s; }
+    .form-submit:hover { opacity:.88; }
 
-    /* ── FOOTER ── */
-    footer {
-      text-align: center;
-      padding: 28px;
-      border-top: 1px solid var(--border);
-      color: var(--muted);
-      font-size: .8rem;
-      font-family: 'Fira Code', monospace;
-    }
+    footer { text-align:center; padding:26px; border-top:1px solid var(--border); color:var(--muted); font-size:.78rem; font-family:'Fira Code',monospace; }
 
-    /* ── RESPONSIVE ── */
-    @media(max-width: 768px) {
-      nav { padding: 14px 20px; }
-      .nav-links { display: none; }
-      section { padding: 64px 20px; }
-      .about-grid, .contact-grid { grid-template-columns: 1fr; }
-      #hero { padding: 100px 20px 60px; }
+    @media(max-width:768px) {
+      nav { padding:14px 20px; }
+      .nav-links { display:none; }
+      section { padding:64px 20px; }
+      .about-grid, .contact-grid, .skills-section-grid { grid-template-columns:1fr; }
+      #hero { padding:100px 20px 60px; }
     }
   </style>
 </head>
 <body>
 
-<!-- NAV -->
 <nav>
   <div class="nav-logo">&lt;ab.dev /&gt;</div>
   <ul class="nav-links">
     <li><a href="#about">About</a></li>
-    <li><a href="#experience">Experience</a></li>
     <li><a href="#skills">Skills</a></li>
+    <li><a href="#experience">Experience</a></li>
     <li><a href="#projects">Projects</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
@@ -403,23 +209,30 @@
   <div class="hero-bg"></div>
   <div class="hero-grid"></div>
   <div class="hero-inner">
-    <div class="hero-tag">&#9679; Available for opportunities</div>
-    <h1>Hi, I'm <span class="grad-text">Abhilash Biradar</span></h1>
-    <p class="role">Fullstack Developer at <span>SAP Labs India</span></p>
-    <p>Building enterprise-grade web applications with UI5, CAP/CDS, and modern fullstack technologies. 9+ years of crafting scalable SAP solutions and developer tooling.</p>
+    <div class="hero-tag">&#9679; Open to opportunities</div>
+    <h1><span class="grad-text">Abhilash B</span></h1>
+    <p class="hero-role">Senior Full-Stack Engineer · <span>SAP BTP · Node.js · CAP · Cloud-Native</span></p>
+    <div class="hero-contact-bar">
+      <a href="tel:+919741423871">📞 +91-9741423871</a>
+      <a href="mailto:abhilash.bbb@gmail.com">✉ abhilash.bbb@gmail.com</a>
+      <a href="https://linkedin.com/in/abhilash-biradar" target="_blank">in abhilash-biradar</a>
+      <a href="https://github.com/AbhilashBiradar" target="_blank">⌥ AbhilashBiradar</a>
+    </div>
+    <p>Full-stack software engineer with 9+ years of experience building enterprise-grade applications — from SAP Fiori frontends to cloud-native backend services on SAP BTP. Designing and developing product platform tools used across SAP's global enterprise customer base.</p>
     <div class="hero-btns">
-      <a href="#projects" class="btn-primary">View My Work</a>
+      <a href="#experience" class="btn-primary">View Experience</a>
       <a href="#contact" class="btn-outline">Get In Touch</a>
     </div>
     <div class="hero-chips">
-      <span class="chip chip-purple">SAPUI5</span>
+      <span class="chip chip-purple">SAP UI5</span>
       <span class="chip chip-teal">CAP / CDS</span>
-      <span class="chip chip-pink">TypeScript</span>
-      <span class="chip chip-orange">Node.js</span>
-      <span class="chip chip-green">Java</span>
-      <span class="chip chip-purple">OData</span>
-      <span class="chip chip-teal">Fiori</span>
+      <span class="chip chip-pink">Node.js</span>
+      <span class="chip chip-orange">OData v4</span>
+      <span class="chip chip-green">SAP BTP</span>
+      <span class="chip chip-purple">TypeScript</span>
       <span class="chip chip-pink">GitHub Actions</span>
+      <span class="chip chip-teal">HANA HDI</span>
+      <span class="chip chip-orange">Cloud Foundry</span>
     </div>
   </div>
 </section>
@@ -430,109 +243,20 @@
     <div class="section-label">// 01. about</div>
     <h2 class="section-title">Who I Am</h2>
     <div class="about-grid">
-      <div class="about-avatar-wrap">
-        <div class="about-avatar-bg">👨‍💻</div>
-      </div>
+      <div><div class="about-avatar-bg">👨‍💻</div></div>
       <div class="about-info">
-        <h3>Abhilash Biradar</h3>
-        <div class="sub">@AbhilashBiradar · github.com/AbhilashBiradar</div>
-        <p>Senior developer at SAP Labs India with 9+ years of experience building enterprise web applications on the SAP Business Technology Platform. Deep expertise in UI5/Fiori frontend development and SAP Cloud Application Programming Model (CAP) backend services.</p>
-        <p>Passionate about developer tooling, UI component libraries, and crafting intuitive interfaces that scale across SAP's global enterprise ecosystem. Contributor to internal SAP frameworks and VSCode extensions for UI5.</p>
+        <h3>Abhilash B</h3>
+        <div class="sub">Senior Full-Stack Engineer · Bengaluru, India</div>
+        <p>Full-stack software engineer with 9+ years at SAP Labs India, specializing in building enterprise-grade cloud-native applications on SAP BTP. Currently designing and developing product platform tools — the PLD (Product Landscape Designer) and CPSE (Cross Product Stack Editor) — used across SAP's global enterprise customer base.</p>
+        <p>Experienced across consulting and product engineering with a strong track record in solution design, cross-functional collaboration, and technical mentorship. Actively growing toward a Tech Lead / Architect role.</p>
         <div class="about-meta">
-          <div class="meta-item">
-            <span class="meta-label">Location</span>
-            <span class="meta-value">Bangalore, India</span>
-          </div>
-          <div class="meta-item">
-            <span class="meta-label">Company</span>
-            <span class="meta-value">SAP Labs India</span>
-          </div>
-          <div class="meta-item">
-            <span class="meta-label">Experience</span>
-            <span class="meta-value">9+ Years</span>
-          </div>
-          <div class="meta-item">
-            <span class="meta-label">Focus</span>
-            <span class="meta-value">Fullstack / UI5</span>
-          </div>
+          <div class="meta-item"><span class="meta-label">Location</span><span class="meta-value">Bengaluru, India</span></div>
+          <div class="meta-item"><span class="meta-label">Company</span><span class="meta-value">SAP Labs India</span></div>
+          <div class="meta-item"><span class="meta-label">Experience</span><span class="meta-value">9+ Years</span></div>
+          <div class="meta-item"><span class="meta-label">Mode</span><span class="meta-value">Hybrid</span></div>
+          <div class="meta-item"><span class="meta-label">Target</span><span class="meta-value">Tech Lead / Architect</span></div>
         </div>
       </div>
-    </div>
-  </div>
-</section>
-
-<!-- EXPERIENCE -->
-<section id="experience">
-  <div class="section-inner">
-    <div class="section-label">// 02. experience</div>
-    <h2 class="section-title">Work History</h2>
-    <p class="section-sub">Building enterprise-scale products at SAP across frontend, backend, and fullstack roles.</p>
-    <div class="timeline">
-
-      <div class="timeline-item">
-        <div class="timeline-dot"></div>
-        <div class="tl-card">
-          <div class="tl-header">
-            <div>
-              <div class="tl-title">Senior Fullstack Developer</div>
-              <div class="tl-company">SAP Labs India — Maintenance Planner</div>
-            </div>
-            <span class="tl-period">2019 – Present</span>
-          </div>
-          <p class="tl-desc">Leading fullstack development of SAP Maintenance Planner — a mission-critical Fiori application used globally for SAP system landscape planning, upgrades, and configuration. Architected OData V4 services using CAP/CDS, built complex UI5 components, and established CI/CD pipelines with GitHub Actions.</p>
-          <div class="tl-tags">
-            <span class="tl-tag">SAPUI5</span>
-            <span class="tl-tag">CAP / CDS</span>
-            <span class="tl-tag">OData V4</span>
-            <span class="tl-tag">Node.js</span>
-            <span class="tl-tag">TypeScript</span>
-            <span class="tl-tag">GitHub Actions</span>
-            <span class="tl-tag">HANA DB</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="timeline-item">
-        <div class="timeline-dot"></div>
-        <div class="tl-card">
-          <div class="tl-header">
-            <div>
-              <div class="tl-title">UI5 Developer</div>
-              <div class="tl-company">SAP Labs India — SMCR Platform</div>
-            </div>
-            <span class="tl-period">2016 – 2019</span>
-          </div>
-          <p class="tl-desc">Developed the Software Modelling & Configuration Repository (SMCR) platform frontend using SAPUI5 and SAP Fiori design guidelines. Built reusable UI components, OData V2 integrations, and contributed to the platform's accessibility compliance.</p>
-          <div class="tl-tags">
-            <span class="tl-tag">SAPUI5</span>
-            <span class="tl-tag">OData V2</span>
-            <span class="tl-tag">Java</span>
-            <span class="tl-tag">SAP HANA</span>
-            <span class="tl-tag">Fiori</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="timeline-item">
-        <div class="timeline-dot"></div>
-        <div class="tl-card">
-          <div class="tl-header">
-            <div>
-              <div class="tl-title">Associate Developer</div>
-              <div class="tl-company">SAP Labs India</div>
-            </div>
-            <span class="tl-period">2014 – 2016</span>
-          </div>
-          <p class="tl-desc">Started career at SAP building Fiori applications and contributing to SAP's enterprise web platform. Gained deep expertise in SAPUI5 framework, MVC architecture, and SAP BTP cloud services.</p>
-          <div class="tl-tags">
-            <span class="tl-tag">SAPUI5</span>
-            <span class="tl-tag">SAP BTP</span>
-            <span class="tl-tag">JavaScript</span>
-            <span class="tl-tag">XML Views</span>
-          </div>
-        </div>
-      </div>
-
     </div>
   </div>
 </section>
@@ -540,88 +264,157 @@
 <!-- SKILLS -->
 <section id="skills">
   <div class="section-inner">
-    <div class="section-label">// 03. skills</div>
-    <h2 class="section-title">Tech Stack</h2>
-    <p class="section-sub">9+ years working with SAP and modern fullstack technologies.</p>
-    <div class="skills-grid">
+    <div class="section-label">// 02. skills</div>
+    <h2 class="section-title">Technical Skills</h2>
+    <p class="section-sub">Enterprise fullstack expertise across cloud, frontend, backend, and tooling.</p>
+    <div class="skills-row">
 
       <div class="skill-group">
-        <div class="skill-group-title"><span class="sg-icon">🎨</span><span style="color:var(--p1)">Frontend</span></div>
-        <div class="skill-bar-wrap">
-          <div class="skill-bar-label"><span>SAPUI5 / Fiori</span><span>Expert</span></div>
-          <div class="skill-bar-bg"><div class="skill-bar-fill" data-w="95" style="background:linear-gradient(90deg,var(--p1),var(--p2));width:0"></div></div>
-        </div>
-        <div class="skill-bar-wrap">
-          <div class="skill-bar-label"><span>TypeScript</span><span>Advanced</span></div>
-          <div class="skill-bar-bg"><div class="skill-bar-fill" data-w="85" style="background:linear-gradient(90deg,var(--p1),var(--p5));width:0"></div></div>
-        </div>
-        <div class="skill-bar-wrap">
-          <div class="skill-bar-label"><span>JavaScript / ES6+</span><span>Expert</span></div>
-          <div class="skill-bar-bg"><div class="skill-bar-fill" data-w="92" style="background:linear-gradient(90deg,var(--p4),var(--p2));width:0"></div></div>
-        </div>
-        <div class="skill-bar-wrap">
-          <div class="skill-bar-label"><span>XML Views / CSS</span><span>Expert</span></div>
-          <div class="skill-bar-bg"><div class="skill-bar-fill" data-w="90" style="background:linear-gradient(90deg,var(--p2),var(--p4));width:0"></div></div>
+        <div class="skill-group-title"><span class="sg-icon">☁️</span><span style="color:var(--p5)">Cloud &amp; Platform</span></div>
+        <div class="skill-tags">
+          <span class="skill-tag chip-teal">SAP BTP</span>
+          <span class="skill-tag chip-teal">Cloud Foundry</span>
+          <span class="skill-tag chip-teal">SAP CAP</span>
+          <span class="skill-tag chip-teal">SAP HANA HDI</span>
+          <span class="skill-tag chip-teal">GitHub Actions</span>
+          <span class="skill-tag chip-teal">CI/CD</span>
         </div>
       </div>
 
       <div class="skill-group">
         <div class="skill-group-title"><span class="sg-icon">⚙️</span><span style="color:var(--p3)">Backend</span></div>
-        <div class="skill-bar-wrap">
-          <div class="skill-bar-label"><span>CAP / CDS</span><span>Expert</span></div>
-          <div class="skill-bar-bg"><div class="skill-bar-fill" data-w="92" style="background:linear-gradient(90deg,var(--p3),var(--p5));width:0"></div></div>
-        </div>
-        <div class="skill-bar-wrap">
-          <div class="skill-bar-label"><span>Node.js</span><span>Advanced</span></div>
-          <div class="skill-bar-bg"><div class="skill-bar-fill" data-w="84" style="background:linear-gradient(90deg,var(--p3),var(--p4));width:0"></div></div>
-        </div>
-        <div class="skill-bar-wrap">
-          <div class="skill-bar-label"><span>Java</span><span>Proficient</span></div>
-          <div class="skill-bar-bg"><div class="skill-bar-fill" data-w="72" style="background:linear-gradient(90deg,var(--p5),var(--p1));width:0"></div></div>
-        </div>
-        <div class="skill-bar-wrap">
-          <div class="skill-bar-label"><span>OData V2 / V4</span><span>Expert</span></div>
-          <div class="skill-bar-bg"><div class="skill-bar-fill" data-w="93" style="background:linear-gradient(90deg,var(--p4),var(--p3));width:0"></div></div>
+        <div class="skill-tags">
+          <span class="skill-tag chip-green">Node.js</span>
+          <span class="skill-tag chip-green">REST APIs</span>
+          <span class="skill-tag chip-green">OData Services</span>
+          <span class="skill-tag chip-green">SAP NetWeaver Gateway</span>
+          <span class="skill-tag chip-green">Java</span>
         </div>
       </div>
 
       <div class="skill-group">
-        <div class="skill-group-title"><span class="sg-icon">☁️</span><span style="color:var(--p4)">Cloud & DevOps</span></div>
-        <div class="skill-bar-wrap">
-          <div class="skill-bar-label"><span>SAP BTP</span><span>Expert</span></div>
-          <div class="skill-bar-bg"><div class="skill-bar-fill" data-w="91" style="background:linear-gradient(90deg,var(--p4),var(--p2));width:0"></div></div>
-        </div>
-        <div class="skill-bar-wrap">
-          <div class="skill-bar-label"><span>GitHub Actions / CI</span><span>Advanced</span></div>
-          <div class="skill-bar-bg"><div class="skill-bar-fill" data-w="82" style="background:linear-gradient(90deg,var(--p1),var(--p4));width:0"></div></div>
-        </div>
-        <div class="skill-bar-wrap">
-          <div class="skill-bar-label"><span>SAP HANA</span><span>Advanced</span></div>
-          <div class="skill-bar-bg"><div class="skill-bar-fill" data-w="80" style="background:linear-gradient(90deg,var(--p2),var(--p5));width:0"></div></div>
-        </div>
-        <div class="skill-bar-wrap">
-          <div class="skill-bar-label"><span>Docker / CF</span><span>Proficient</span></div>
-          <div class="skill-bar-bg"><div class="skill-bar-fill" data-w="68" style="background:linear-gradient(90deg,var(--p5),var(--p3));width:0"></div></div>
+        <div class="skill-group-title"><span class="sg-icon">🎨</span><span style="color:var(--p1)">Frontend</span></div>
+        <div class="skill-tags">
+          <span class="skill-tag chip-purple">SAP UI5</span>
+          <span class="skill-tag chip-purple">SAP Fiori</span>
+          <span class="skill-tag chip-purple">TypeScript</span>
+          <span class="skill-tag chip-purple">JavaScript ES6+</span>
+          <span class="skill-tag chip-purple">HTML5 / CSS3</span>
+          <span class="skill-tag chip-purple">jQuery</span>
         </div>
       </div>
 
       <div class="skill-group">
-        <div class="skill-group-title"><span class="sg-icon">🛠️</span><span style="color:var(--p5)">Tooling</span></div>
-        <div class="skill-bar-wrap">
-          <div class="skill-bar-label"><span>VSCode Extensions</span><span>Advanced</span></div>
-          <div class="skill-bar-bg"><div class="skill-bar-fill" data-w="83" style="background:linear-gradient(90deg,var(--p5),var(--p1));width:0"></div></div>
+        <div class="skill-group-title"><span class="sg-icon">🧪</span><span style="color:var(--p2)">Testing</span></div>
+        <div class="skill-tags">
+          <span class="skill-tag chip-pink">QUnit</span>
+          <span class="skill-tag chip-pink">Jest</span>
+          <span class="skill-tag chip-pink">Bruno</span>
+          <span class="skill-tag chip-pink">wdi5</span>
+          <span class="skill-tag chip-pink">QMate</span>
         </div>
-        <div class="skill-bar-wrap">
-          <div class="skill-bar-label"><span>UI5 Tooling / CLI</span><span>Expert</span></div>
-          <div class="skill-bar-bg"><div class="skill-bar-fill" data-w="90" style="background:linear-gradient(90deg,var(--p1),var(--p3));width:0"></div></div>
+      </div>
+
+      <div class="skill-group">
+        <div class="skill-group-title"><span class="sg-icon">🛠️</span><span style="color:var(--p4)">Tools &amp; Others</span></div>
+        <div class="skill-tags">
+          <span class="skill-tag chip-orange">Git</span>
+          <span class="skill-tag chip-orange">OAuth 2.0</span>
+          <span class="skill-tag chip-orange">Cordova</span>
+          <span class="skill-tag chip-orange">MongoDB</span>
+          <span class="skill-tag chip-orange">Claude / ChatGPT</span>
+          <span class="skill-tag chip-orange">AI-assisted dev</span>
         </div>
-        <div class="skill-bar-wrap">
-          <div class="skill-bar-label"><span>Jest / WDI5</span><span>Advanced</span></div>
-          <div class="skill-bar-bg"><div class="skill-bar-fill" data-w="78" style="background:linear-gradient(90deg,var(--p3),var(--p2));width:0"></div></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="section-inner">
+    <div class="section-label">// 03. experience</div>
+    <h2 class="section-title">Professional Experience</h2>
+    <p class="section-sub">Building enterprise-scale SAP products and consulting for global clients.</p>
+    <div class="timeline">
+
+      <!-- SAP Labs -->
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="tl-card">
+          <div class="tl-header">
+            <div>
+              <div class="tl-title">Developer (Full-Stack)</div>
+              <div class="tl-company">SAP Labs India</div>
+            </div>
+            <span class="tl-period">Dec 2021 – Present</span>
+          </div>
+          <div class="tl-location">Bengaluru, India · Hybrid</div>
+
+          <div class="tl-sub">Product Landscape Designer (PLD) / Cross Product Stack Editor (CPSE)</div>
+          <ul class="tl-list">
+            <li>Designed and developed cloud-native full-stack features for CPSE, an enterprise tool managing product stack lifecycles across SAP's global customer base.</li>
+            <li>Built and maintained REST APIs and backend services using Node.js and SAP CAP, supporting complex enterprise workflows at scale on SAP BTP Cloud Foundry.</li>
+            <li>Developed responsive SAP UI5 frontends collaborating closely with UX designers and product owners to deliver standards-compliant interfaces.</li>
+            <li>Architected SAP HANA HDI database layers, ensuring performant data models for enterprise-scale operations.</li>
+            <li>Established and maintained CI/CD pipelines using GitHub Actions, improving deployment reliability and release cadence.</li>
+            <li>Built automated test suites using QUnit, Jest, Bruno, wdi5, and QMate — covering unit, integration, and end-to-end scenarios.</li>
+            <li>Participated in solution design, architecture reviews, and cross-team alignment with global engineering teams.</li>
+            <li>Leveraged AI-assisted development tools (Claude, ChatGPT) to accelerate delivery, debugging, and test coverage.</li>
+          </ul>
+
+          <div class="tl-sub">Intelligent Landscape Management (ILM)</div>
+          <ul class="tl-list">
+            <li>Contributed to enterprise landscape management solutions within SAP's Landscape Management portfolio.</li>
+            <li>Delivered feature enhancements, defect fixes, and release support; participated in end-to-end SDLC across design, development, testing, and deployment.</li>
+          </ul>
+
+          <div class="tl-tags">
+            <span class="tl-tag">SAP UI5</span>
+            <span class="tl-tag">CAP / CDS</span>
+            <span class="tl-tag">Node.js</span>
+            <span class="tl-tag">TypeScript</span>
+            <span class="tl-tag">HANA HDI</span>
+            <span class="tl-tag">OData V4</span>
+            <span class="tl-tag">GitHub Actions</span>
+            <span class="tl-tag">SAP BTP</span>
+            <span class="tl-tag">Cloud Foundry</span>
+            <span class="tl-tag">Jest</span>
+            <span class="tl-tag">wdi5</span>
+          </div>
         </div>
-        <div class="skill-bar-wrap">
-          <div class="skill-bar-label"><span>Git / GitHub</span><span>Expert</span></div>
-          <div class="skill-bar-bg"><div class="skill-bar-fill" data-w="94" style="background:linear-gradient(90deg,var(--p2),var(--p1));width:0"></div></div>
+      </div>
+
+      <!-- Capgemini -->
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="tl-card">
+          <div class="tl-header">
+            <div>
+              <div class="tl-title">Senior Consultant</div>
+              <div class="tl-company">Capgemini India</div>
+            </div>
+            <span class="tl-period">Jul 2020 – Dec 2021</span>
+          </div>
+          <div class="tl-location">Bengaluru, India · On-site</div>
+          <div class="tl-client">Client: Daimler (Mercedes-Benz R&amp;D India)</div>
+          <ul class="tl-list">
+            <li>Implemented OAuth 2.0 (OIDC) for the SAP Fiori Launchpad, securing enterprise authentication flows.</li>
+            <li>Developed and delivered custom Fiori applications adhering to SAP Fiori design standards for Daimler's internal teams.</li>
+            <li>Built a Test Automation Data Management tool, handling test data generation and triggering UFT test suites.</li>
+            <li>Developed custom Transport Management System to streamline SAP landscape operations.</li>
+            <li>Trained and mentored junior team members on SAP UI5 and Fiori development best practices.</li>
+          </ul>
+          <div class="tl-tags">
+            <span class="tl-tag">SAP UI5</span>
+            <span class="tl-tag">SAP Fiori</span>
+            <span class="tl-tag">OAuth 2.0</span>
+            <span class="tl-tag">OIDC</span>
+            <span class="tl-tag">UFT</span>
+            <span class="tl-tag">Transport Management</span>
+            <span class="tl-tag">Mentoring</span>
+          </div>
         </div>
       </div>
 
@@ -633,29 +426,27 @@
 <section id="projects">
   <div class="section-inner">
     <div class="section-label">// 04. projects</div>
-    <h2 class="section-title">Featured Work</h2>
-    <p class="section-sub">A selection of projects built at SAP and personal explorations.</p>
+    <h2 class="section-title">Featured Projects</h2>
+    <p class="section-sub">Key work from SAP and personal engineering projects.</p>
     <div class="projects-grid">
 
       <div class="project-card">
         <div class="project-icon">🗺️</div>
-        <h3>SAP Maintenance Planner</h3>
-        <p>Enterprise Fiori app for SAP system landscape planning, stack XML generation, and upgrade orchestration. Serves thousands of SAP customers globally for managing system maintenance cycles.</p>
+        <h3>PLD / CPSE — SAP BTP</h3>
+        <p>Product Landscape Designer and Cross Product Stack Editor — enterprise cloud-native fullstack apps for managing SAP product stack lifecycles at global scale on BTP Cloud Foundry.</p>
         <div class="project-tags">
-          <span class="project-tag chip-purple">SAPUI5</span>
+          <span class="project-tag chip-purple">SAP UI5</span>
           <span class="project-tag chip-teal">CAP/CDS</span>
-          <span class="project-tag chip-orange">OData V4</span>
-          <span class="project-tag chip-pink">Node.js</span>
+          <span class="project-tag chip-green">Node.js</span>
+          <span class="project-tag chip-orange">HANA HDI</span>
         </div>
-        <div class="project-links">
-          <span style="font-size:.78rem;color:var(--muted)">SAP Internal Product</span>
-        </div>
+        <div class="project-links"><span style="font-size:.76rem;color:var(--muted)">SAP Internal Product</span></div>
       </div>
 
       <div class="project-card">
         <div class="project-icon">🔌</div>
         <h3>UI5 Context Selection Plugin</h3>
-        <p>VSCode extension that enhances the UI5 development experience with intelligent context-aware selections, model bindings preview, and real-time OData metadata exploration directly in the editor.</p>
+        <p>VSCode extension for intelligent UI5 development — context-aware selections, model bindings preview, and real-time OData metadata exploration directly in the editor.</p>
         <div class="project-tags">
           <span class="project-tag chip-teal">TypeScript</span>
           <span class="project-tag chip-purple">VSCode API</span>
@@ -669,12 +460,11 @@
       <div class="project-card">
         <div class="project-icon">🗳️</div>
         <h3>Karnataka Voter Search</h3>
-        <p>Full-stack web application for searching Karnataka electoral rolls using OCR and machine learning on voter list PDFs. Built with Python, Jupyter notebooks and a clean search UI.</p>
+        <p>Full-stack app for searching Karnataka electoral rolls using OCR and ML on voter list PDFs. Built with Python, Jupyter notebooks, and a clean search UI.</p>
         <div class="project-tags">
           <span class="project-tag chip-orange">Python</span>
           <span class="project-tag chip-pink">OCR / ML</span>
           <span class="project-tag chip-green">Jupyter</span>
-          <span class="project-tag chip-teal">Data</span>
         </div>
         <div class="project-links">
           <a href="https://github.com/AbhilashBiradar/karnataka-voter-search" class="project-link" target="_blank">&#8599; GitHub</a>
@@ -684,14 +474,14 @@
       <div class="project-card">
         <div class="project-icon">🌍</div>
         <h3>Europe Tour Brochures</h3>
-        <p>Pixel-perfect digital travel brochures for AdvenWorld tours — built with pure HTML/CSS, Puppeteer-generated PDFs, colour-graded page galleries, and hosted on GitHub Pages.</p>
+        <p>Pixel-perfect digital travel brochures — pure HTML/CSS, Puppeteer-generated per-page PNGs and PDFs, colour-graded galleries, hosted on GitHub Pages.</p>
         <div class="project-tags">
           <span class="project-tag chip-purple">HTML/CSS</span>
           <span class="project-tag chip-pink">Puppeteer</span>
           <span class="project-tag chip-orange">GitHub Pages</span>
         </div>
         <div class="project-links">
-          <a href="https://abhilashbiradar.github.io/europe-brochure" class="project-link" target="_blank">&#8599; Live Site</a>
+          <a href="https://abhilashbiradar.github.io/europe-brochure" class="project-link" target="_blank">&#8599; Live</a>
           <a href="https://github.com/AbhilashBiradar/europe-brochure" class="project-link" target="_blank">&#8599; GitHub</a>
         </div>
       </div>
@@ -708,71 +498,40 @@
     <div class="contact-grid">
       <div class="contact-info">
         <h3>Let's build something great.</h3>
-        <p>Open to interesting fullstack, UI5, or SAP BTP opportunities, collaborations, and conversations. Feel free to reach out!</p>
+        <p>Open to fullstack, SAP BTP, and cloud-native opportunities, collaborations, and architecture conversations. Feel free to reach out!</p>
         <div class="contact-links">
+          <a class="contact-item" href="mailto:abhilash.bbb@gmail.com">
+            <div class="contact-icon" style="background:rgba(255,101,132,.15)">@</div>
+            <div class="contact-item-text"><div class="label">EMAIL</div><div class="value">abhilash.bbb@gmail.com</div></div>
+          </a>
+          <a class="contact-item" href="tel:+919741423871">
+            <div class="contact-icon" style="background:rgba(67,233,123,.15)">📞</div>
+            <div class="contact-item-text"><div class="label">PHONE</div><div class="value">+91-9741423871</div></div>
+          </a>
+          <a class="contact-item" href="https://linkedin.com/in/abhilash-biradar" target="_blank">
+            <div class="contact-icon" style="background:rgba(56,249,215,.15);font-size:.8rem">in</div>
+            <div class="contact-item-text"><div class="label">LINKEDIN</div><div class="value">linkedin.com/in/abhilash-biradar</div></div>
+          </a>
           <a class="contact-item" href="https://github.com/AbhilashBiradar" target="_blank">
             <div class="contact-icon" style="background:rgba(108,99,255,.15)">⌥</div>
-            <div class="contact-item-text">
-              <div class="label">GITHUB</div>
-              <div class="value">github.com/AbhilashBiradar</div>
-            </div>
-          </a>
-          <a class="contact-item" href="https://www.linkedin.com/in/abhilashbiradar" target="_blank">
-            <div class="contact-icon" style="background:rgba(56,249,215,.15)">in</div>
-            <div class="contact-item-text">
-              <div class="label">LINKEDIN</div>
-              <div class="value">linkedin.com/in/abhilashbiradar</div>
-            </div>
-          </a>
-          <a class="contact-item" href="mailto:abhilash.biradar@sap.com">
-            <div class="contact-icon" style="background:rgba(255,101,132,.15)">@</div>
-            <div class="contact-item-text">
-              <div class="label">EMAIL</div>
-              <div class="value">abhilash.biradar@sap.com</div>
-            </div>
+            <div class="contact-item-text"><div class="label">GITHUB</div><div class="value">github.com/AbhilashBiradar</div></div>
           </a>
         </div>
       </div>
       <form class="contact-form" onsubmit="handleForm(event)">
-        <div class="form-group">
-          <label>YOUR NAME</label>
-          <input type="text" placeholder="John Doe" required/>
-        </div>
-        <div class="form-group">
-          <label>EMAIL</label>
-          <input type="email" placeholder="john@example.com" required/>
-        </div>
-        <div class="form-group">
-          <label>MESSAGE</label>
-          <textarea rows="5" placeholder="Hi Abhilash, I'd like to..." required></textarea>
-        </div>
+        <div class="form-group"><label>YOUR NAME</label><input type="text" placeholder="John Doe" required/></div>
+        <div class="form-group"><label>EMAIL</label><input type="email" placeholder="john@example.com" required/></div>
+        <div class="form-group"><label>MESSAGE</label><textarea rows="5" placeholder="Hi Abhilash, I'd like to..." required></textarea></div>
         <button type="submit" class="form-submit">Send Message &#8594;</button>
-        <div id="form-msg" style="font-size:.82rem;color:var(--p3);display:none;text-align:center;">
-          ✓ Thanks! I'll get back to you soon.
-        </div>
+        <div id="form-msg" style="font-size:.82rem;color:var(--p3);display:none;text-align:center;">✓ Thanks! I'll get back to you soon.</div>
       </form>
     </div>
   </div>
 </section>
 
-<footer>
-  &lt;built with ❤️ by Abhilash Biradar · 2025 /&gt;
-</footer>
+<footer>&lt;built with ❤️ by Abhilash B · Bengaluru 2025 /&gt;</footer>
 
 <script>
-  // Animate skill bars on scroll
-  const bars = document.querySelectorAll('.skill-bar-fill');
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(e => {
-      if (e.isIntersecting) {
-        e.target.style.width = e.target.dataset.w + '%';
-        observer.unobserve(e.target);
-      }
-    });
-  }, { threshold: 0.3 });
-  bars.forEach(b => observer.observe(b));
-
-  // Contact form mock handler
   function handleForm(e) {
     e.preventDefault();
     const msg = document.getElementById('form-msg');
