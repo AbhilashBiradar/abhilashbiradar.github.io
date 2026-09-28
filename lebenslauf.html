@@ -416,21 +416,72 @@
       color: #94a3b8;
     }
 
+    /* ── PRINT BUTTON ── */
+    .print-btn {
+      position: fixed;
+      bottom: 28px;
+      right: 28px;
+      z-index: 999;
+      background: #6c63ff;
+      color: #fff;
+      border: none;
+      border-radius: 50px;
+      padding: 12px 22px;
+      font-size: 13px;
+      font-weight: 600;
+      font-family: inherit;
+      cursor: pointer;
+      box-shadow: 0 4px 18px rgba(108,99,255,.45);
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      transition: background .2s, transform .2s;
+    }
+    .print-btn:hover { background: #5b52e0; transform: translateY(-2px); }
+
     /* ── PRINT ── */
     @media print {
-      body { background: #fff; font-size: 9.5pt; }
-      .page { box-shadow: none; max-width: 100%; }
-      .exp-entry { page-break-inside: avoid; }
-      .section { page-break-inside: avoid; }
+      /* Force backgrounds to print */
+      * {
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+      }
+
+      body {
+        background: #fff !important;
+        font-size: 9.5pt;
+        margin: 0;
+        padding: 0;
+      }
+
+      .page {
+        box-shadow: none !important;
+        max-width: 100% !important;
+        width: 100% !important;
+        margin: 0 !important;
+      }
+
+      /* Hide print button itself */
+      .print-btn { display: none !important; }
+
+      /* Avoid breaking inside entries */
+      .exp-entry  { page-break-inside: avoid; break-inside: avoid; }
+      .section    { page-break-inside: avoid; break-inside: avoid; }
+      .edu-entry  { page-break-inside: avoid; break-inside: avoid; }
+      .vol-entry  { page-break-inside: avoid; break-inside: avoid; }
+
+      /* Ensure links are readable — print the href only for external ones */
+      a { color: inherit !important; text-decoration: none !important; }
     }
 
     @page {
       size: A4;
-      margin: 12mm 14mm;
+      margin: 10mm 12mm;
     }
   </style>
 </head>
 <body>
+<button class="print-btn" onclick="window.print()">🖨️ Drucken / PDF</button>
 <div class="page">
 
   <!-- ── HEADER ── -->
