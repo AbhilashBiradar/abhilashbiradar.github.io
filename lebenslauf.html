@@ -1,0 +1,753 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Lebenslauf – Abhilash Biradar</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Inter', Arial, sans-serif;
+      font-size: 10.5pt;
+      color: #1a1a2e;
+      background: #f4f6f9;
+      line-height: 1.5;
+    }
+
+    .page {
+      max-width: 210mm;
+      margin: 0 auto;
+      background: #fff;
+      box-shadow: 0 2px 24px rgba(0,0,0,0.10);
+    }
+
+    /* ── HEADER ── */
+    .header {
+      background: #1a1a2e;
+      color: #fff;
+      padding: 36px 48px 30px;
+      display: flex;
+      align-items: flex-start;
+      gap: 32px;
+    }
+
+    .header-photo {
+      width: 92px;
+      height: 92px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #6c63ff 0%, #f7971e 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2.4rem;
+      flex-shrink: 0;
+      border: 3px solid rgba(255,255,255,0.25);
+    }
+
+    .header-info { flex: 1; }
+
+    .header-info h1 {
+      font-size: 22pt;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      color: #fff;
+      margin-bottom: 4px;
+    }
+
+    .header-info .role {
+      font-size: 10.5pt;
+      font-weight: 400;
+      color: #a5b4fc;
+      margin-bottom: 14px;
+      letter-spacing: 0.3px;
+    }
+
+    .contact-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px 20px;
+      font-size: 9pt;
+      color: #cbd5e1;
+    }
+
+    .contact-row span {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .contact-row a {
+      color: #a5b4fc;
+      text-decoration: none;
+    }
+
+    /* ── BODY ── */
+    .body {
+      display: grid;
+      grid-template-columns: 200px 1fr;
+      min-height: 240mm;
+    }
+
+    /* ── SIDEBAR ── */
+    .sidebar {
+      background: #f8fafc;
+      border-right: 1px solid #e2e8f0;
+      padding: 28px 20px;
+    }
+
+    .sidebar-section { margin-bottom: 26px; }
+
+    .sidebar-section:last-child { margin-bottom: 0; }
+
+    .sidebar-label {
+      font-size: 7.5pt;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: #6c63ff;
+      border-bottom: 2px solid #6c63ff;
+      padding-bottom: 4px;
+      margin-bottom: 12px;
+    }
+
+    .skill-group-title {
+      font-size: 8.5pt;
+      font-weight: 600;
+      color: #334155;
+      margin: 10px 0 5px;
+    }
+
+    .skill-group-title:first-child { margin-top: 0; }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 4px;
+    }
+
+    .tag {
+      font-size: 7.5pt;
+      padding: 2px 8px;
+      border-radius: 10px;
+      background: #ede9fe;
+      color: #5b21b6;
+      font-weight: 500;
+    }
+
+    .tag.green  { background: #dcfce7; color: #15803d; }
+    .tag.blue   { background: #dbeafe; color: #1d4ed8; }
+    .tag.orange { background: #ffedd5; color: #c2410c; }
+
+    .lang-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 8.5pt;
+      margin-bottom: 6px;
+    }
+
+    .lang-name { font-weight: 600; color: #334155; }
+
+    .lang-level {
+      font-size: 7.5pt;
+      color: #64748b;
+      font-weight: 500;
+    }
+
+    .cert-item {
+      font-size: 8pt;
+      color: #475569;
+      margin-bottom: 8px;
+      padding-left: 8px;
+      border-left: 2px solid #c7d2fe;
+    }
+
+    .cert-item strong {
+      display: block;
+      color: #1e293b;
+      font-weight: 600;
+    }
+
+    .cert-item span { color: #94a3b8; font-size: 7.5pt; }
+
+    .sidebar-text {
+      font-size: 8.5pt;
+      color: #475569;
+      line-height: 1.6;
+    }
+
+    .sidebar-text li {
+      margin-bottom: 4px;
+      padding-left: 4px;
+    }
+
+    /* ── MAIN ── */
+    .main { padding: 28px 36px; }
+
+    .section { margin-bottom: 28px; }
+
+    .section:last-child { margin-bottom: 0; }
+
+    .section-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 16px;
+    }
+
+    .section-icon {
+      width: 28px;
+      height: 28px;
+      border-radius: 6px;
+      background: linear-gradient(135deg, #6c63ff, #a78bfa);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      flex-shrink: 0;
+    }
+
+    .section-title {
+      font-size: 12pt;
+      font-weight: 700;
+      color: #1a1a2e;
+      letter-spacing: -0.3px;
+    }
+
+    /* ── EXPERIENCE ENTRY ── */
+    .exp-entry {
+      margin-bottom: 20px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid #f1f5f9;
+    }
+
+    .exp-entry:last-child {
+      margin-bottom: 0;
+      padding-bottom: 0;
+      border-bottom: none;
+    }
+
+    .exp-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 2px;
+    }
+
+    .exp-title {
+      font-size: 10.5pt;
+      font-weight: 700;
+      color: #1e293b;
+    }
+
+    .exp-date {
+      font-size: 8.5pt;
+      color: #6c63ff;
+      font-weight: 600;
+      white-space: nowrap;
+      margin-left: 12px;
+      background: #ede9fe;
+      padding: 2px 8px;
+      border-radius: 10px;
+    }
+
+    .exp-company {
+      font-size: 9pt;
+      color: #475569;
+      font-weight: 500;
+      margin-bottom: 2px;
+    }
+
+    .exp-location {
+      font-size: 8pt;
+      color: #94a3b8;
+      margin-bottom: 8px;
+    }
+
+    .exp-project {
+      font-size: 8.5pt;
+      font-weight: 600;
+      color: #6c63ff;
+      margin-bottom: 5px;
+      margin-top: 6px;
+    }
+
+    ul.exp-list {
+      list-style: none;
+      padding: 0;
+    }
+
+    ul.exp-list li {
+      font-size: 8.5pt;
+      color: #475569;
+      padding-left: 14px;
+      position: relative;
+      margin-bottom: 4px;
+      line-height: 1.55;
+    }
+
+    ul.exp-list li::before {
+      content: '▸';
+      position: absolute;
+      left: 0;
+      color: #6c63ff;
+      font-size: 8pt;
+      top: 1px;
+    }
+
+    .tech-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 4px;
+      margin-top: 8px;
+    }
+
+    .tech-chip {
+      font-size: 7pt;
+      padding: 2px 7px;
+      border-radius: 8px;
+      background: #f1f5f9;
+      color: #475569;
+      border: 1px solid #e2e8f0;
+      font-weight: 500;
+    }
+
+    /* ── PROFILE ── */
+    .profile-text {
+      font-size: 9.5pt;
+      color: #475569;
+      line-height: 1.7;
+    }
+
+    .profile-highlights {
+      display: flex;
+      gap: 12px;
+      margin-top: 12px;
+      flex-wrap: wrap;
+    }
+
+    .p-stat {
+      background: linear-gradient(135deg, #ede9fe, #dbeafe);
+      border-radius: 8px;
+      padding: 8px 14px;
+      text-align: center;
+      min-width: 80px;
+    }
+
+    .p-stat-num {
+      font-size: 14pt;
+      font-weight: 800;
+      color: #6c63ff;
+      display: block;
+      line-height: 1.1;
+    }
+
+    .p-stat-label {
+      font-size: 7pt;
+      color: #64748b;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      font-weight: 600;
+    }
+
+    /* ── EDUCATION ── */
+    .edu-entry {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+
+    .edu-info { flex: 1; }
+
+    .edu-degree {
+      font-size: 10pt;
+      font-weight: 700;
+      color: #1e293b;
+    }
+
+    .edu-school {
+      font-size: 9pt;
+      color: #475569;
+      margin-top: 2px;
+    }
+
+    .edu-year {
+      font-size: 8.5pt;
+      color: #6c63ff;
+      font-weight: 600;
+      background: #ede9fe;
+      padding: 2px 8px;
+      border-radius: 10px;
+      white-space: nowrap;
+      margin-left: 12px;
+    }
+
+    /* ── VOLUNTEERING ── */
+    .vol-entry {
+      margin-bottom: 10px;
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+    }
+
+    .vol-icon {
+      font-size: 1.1rem;
+      line-height: 1.4;
+    }
+
+    .vol-info { flex: 1; }
+
+    .vol-role {
+      font-size: 9pt;
+      font-weight: 700;
+      color: #1e293b;
+    }
+
+    .vol-org {
+      font-size: 8.5pt;
+      color: #475569;
+    }
+
+    .vol-date {
+      font-size: 7.5pt;
+      color: #94a3b8;
+    }
+
+    /* ── PRINT ── */
+    @media print {
+      body { background: #fff; font-size: 9.5pt; }
+      .page { box-shadow: none; max-width: 100%; }
+      .exp-entry { page-break-inside: avoid; }
+      .section { page-break-inside: avoid; }
+    }
+
+    @page {
+      size: A4;
+      margin: 12mm 14mm;
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <!-- ── HEADER ── -->
+  <div class="header">
+    <div class="header-photo">👨‍💻</div>
+    <div class="header-info">
+      <h1>Abhilash Biradar</h1>
+      <div class="role">Senior Full-Stack Software Engineer · SAP BTP, UI5, CAP/CDS, Node.js</div>
+      <div class="contact-row">
+        <span>📧 <a href="mailto:abhilash.bbb@gmail.com">abhilash.bbb@gmail.com</a></span>
+        <span>📞 +91-9741423871</span>
+        <span>📍 Bengaluru, Indien</span>
+        <span>🔗 <a href="https://linkedin.com/in/abhilash-biradar">linkedin.com/in/abhilash-biradar</a></span>
+        <span>💻 <a href="https://github.com/AbhilashBiradar">github.com/AbhilashBiradar</a></span>
+        <span>🌐 <a href="https://abhilashbiradar.github.io">abhilashbiradar.github.io</a></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── BODY ── -->
+  <div class="body">
+
+    <!-- ── SIDEBAR ── -->
+    <aside class="sidebar">
+
+      <div class="sidebar-section">
+        <div class="sidebar-label">Sprachen</div>
+        <div class="lang-item">
+          <span class="lang-name">Englisch</span>
+          <span class="lang-level">Fließend (C1)</span>
+        </div>
+        <div class="lang-item">
+          <span class="lang-name">Kannada</span>
+          <span class="lang-level">Muttersprache</span>
+        </div>
+        <div class="lang-item">
+          <span class="lang-name">Hindi</span>
+          <span class="lang-level">Gut (B1)</span>
+        </div>
+      </div>
+
+      <div class="sidebar-section">
+        <div class="sidebar-label">Cloud & Plattform</div>
+        <div class="tags">
+          <span class="tag">SAP BTP</span>
+          <span class="tag">Cloud Foundry</span>
+          <span class="tag">SAP CAP</span>
+          <span class="tag">SAP HANA HDI</span>
+          <span class="tag">GitHub Actions</span>
+          <span class="tag">CI/CD</span>
+        </div>
+      </div>
+
+      <div class="sidebar-section">
+        <div class="sidebar-label">Frontend</div>
+        <div class="tags">
+          <span class="tag blue">SAP UI5</span>
+          <span class="tag blue">SAP Fiori</span>
+          <span class="tag blue">TypeScript</span>
+          <span class="tag blue">JavaScript ES6+</span>
+          <span class="tag blue">HTML5 / CSS3</span>
+          <span class="tag blue">jQuery</span>
+          <span class="tag blue">HighChart.js</span>
+        </div>
+      </div>
+
+      <div class="sidebar-section">
+        <div class="sidebar-label">Backend</div>
+        <div class="tags">
+          <span class="tag green">Node.js</span>
+          <span class="tag green">REST APIs</span>
+          <span class="tag green">OData V4</span>
+          <span class="tag green">NetWeaver</span>
+          <span class="tag green">MongoDB</span>
+        </div>
+      </div>
+
+      <div class="sidebar-section">
+        <div class="sidebar-label">Testing</div>
+        <div class="tags">
+          <span class="tag orange">QUnit</span>
+          <span class="tag orange">Jest</span>
+          <span class="tag orange">wdi5</span>
+          <span class="tag orange">QMate</span>
+          <span class="tag orange">httpYac</span>
+        </div>
+      </div>
+
+      <div class="sidebar-section">
+        <div class="sidebar-label">Sonstiges</div>
+        <div class="tags">
+          <span class="tag">Git</span>
+          <span class="tag">OAuth 2.0</span>
+          <span class="tag">Cordova</span>
+          <span class="tag">AI-gestützte Entwicklung</span>
+        </div>
+      </div>
+
+      <div class="sidebar-section">
+        <div class="sidebar-label">Zertifikate</div>
+        <div class="cert-item">
+          <strong>SAP Fiori Launchpad</strong>
+          SAP / openSAP
+          <span>März 2017</span>
+        </div>
+        <div class="cert-item">
+          <strong>Foundation Web Development: JavaScript</strong>
+          Tata Consultancy Services
+          <span>Jun. 2017</span>
+        </div>
+      </div>
+
+      <div class="sidebar-section">
+        <div class="sidebar-label">Open Source</div>
+        <ul class="sidebar-text" style="list-style:none; padding:0;">
+          <li style="margin-bottom:6px;">
+            <strong style="font-size:8.5pt; color:#1e293b;">httpyac-plugin-reporter-html</strong><br/>
+            <span style="font-size:7.5pt; color:#64748b;">HTML-Testberichte für httpYac · Node.js · npm / GitHub</span>
+          </li>
+          <li>
+            <strong style="font-size:8.5pt; color:#1e293b;">UI5 Table Selection Plugin</strong><br/>
+            <span style="font-size:7.5pt; color:#64748b;">Erhält Zeilenauswahl nach Sortierung/Filter · OpenUI5</span>
+          </li>
+        </ul>
+      </div>
+
+    </aside>
+
+    <!-- ── MAIN ── -->
+    <main class="main">
+
+      <!-- Profil -->
+      <div class="section">
+        <div class="section-header">
+          <div class="section-icon">👤</div>
+          <div class="section-title">Berufliches Profil</div>
+        </div>
+        <div class="profile-text">
+          Senior Full-Stack Software Engineer mit über 10 Jahren Erfahrung in der Entwicklung
+          unternehmenskritischer, cloudnativer Anwendungen bei SAP Labs India. Tiefgreifende Expertise
+          in SAP UI5/Fiori, SAP CAP, SAP BTP (Cloud Foundry) sowie Node.js und TypeScript.
+          Bewährte Erfahrung in Produktentwicklung und Enterprise Consulting bei namhaften Kunden
+          (u.&nbsp;a. Daimler / Mercedes-Benz R&amp;D India). Angestrebt: Rolle als Tech Lead oder Software-Architekt.
+        </div>
+        <div class="profile-highlights">
+          <div class="p-stat">
+            <span class="p-stat-num">10+</span>
+            <span class="p-stat-label">Jahre Erfahrung</span>
+          </div>
+          <div class="p-stat">
+            <span class="p-stat-num">4</span>
+            <span class="p-stat-label">Unternehmen</span>
+          </div>
+          <div class="p-stat">
+            <span class="p-stat-num">10+</span>
+            <span class="p-stat-label">Projekte</span>
+          </div>
+          <div class="p-stat">
+            <span class="p-stat-num">3</span>
+            <span class="p-stat-label">Länder</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Berufserfahrung -->
+      <div class="section">
+        <div class="section-header">
+          <div class="section-icon">💼</div>
+          <div class="section-title">Berufserfahrung</div>
+        </div>
+
+        <!-- SAP Labs -->
+        <div class="exp-entry">
+          <div class="exp-header">
+            <div class="exp-title">Entwickler – Full-Stack</div>
+            <div class="exp-date">Dez. 2021 – heute</div>
+          </div>
+          <div class="exp-company">SAP Labs India</div>
+          <div class="exp-location">Bengaluru, Indien · Hybrid</div>
+          <div class="exp-project">🗺️ Product Landscape Designer (PLD) / Cross Product Stack Editor (CPSE)</div>
+          <ul class="exp-list">
+            <li>Entwicklung cloudnativer Full-Stack-Features für CPSE, ein Enterprise-Tool zur Verwaltung von Produkt-Stack-Lebenszyklen über SAPs globalen Kundenstamm.</li>
+            <li>Aufbau und Pflege von REST-APIs und Backend-Diensten mit Node.js und SAP CAP auf SAP BTP Cloud Foundry.</li>
+            <li>Entwicklung responsiver SAP UI5-Frontends in enger Zusammenarbeit mit UX-Designern und Product Ownern.</li>
+            <li>Architektur von SAP HANA HDI-Datenbankschichten für performante, enterprise-skalierbare Datenmodelle.</li>
+            <li>Einrichtung und Pflege von CI/CD-Pipelines mit GitHub Actions; Steigerung der Deploymentzuverlässigkeit.</li>
+            <li>Aufbau automatisierter Testsuites (QUnit, QMate, wdi5, httpYac) inkl. variabler HTTPS-API-Tests in GitHub CI/CD.</li>
+            <li>Unterstützung KI-gestützter Entwicklungsworkflows (ChatGPT) zur Beschleunigung des SDLC.</li>
+          </ul>
+          <div class="tech-chips">
+            <span class="tech-chip">SAP UI5</span><span class="tech-chip">CAP / CDS</span>
+            <span class="tech-chip">Node.js</span><span class="tech-chip">TypeScript</span>
+            <span class="tech-chip">HANA HDI</span><span class="tech-chip">OData V4</span>
+            <span class="tech-chip">GitHub Actions</span><span class="tech-chip">SAP BTP</span>
+            <span class="tech-chip">Cloud Foundry</span><span class="tech-chip">wdi5</span>
+            <span class="tech-chip">httpYac</span>
+          </div>
+        </div>
+
+        <!-- Capgemini -->
+        <div class="exp-entry">
+          <div class="exp-header">
+            <div class="exp-title">Senior Consultant</div>
+            <div class="exp-date">Jul. 2020 – Dez. 2021</div>
+          </div>
+          <div class="exp-company">Capgemini India</div>
+          <div class="exp-location">Bengaluru, Indien · Vor Ort · Kunde: Daimler (Mercedes-Benz R&amp;D India)</div>
+          <div class="exp-project">🚗 MIA Gateway Services</div>
+          <ul class="exp-list">
+            <li>Implementierung von OAuth 2.0 (OIDC) im SAP Fiori Launchpad zur Absicherung von Enterprise-Authentifizierungsflows.</li>
+            <li>Entwicklung und Lieferung maßgeschneiderter Fiori-Applikationen nach SAP Fiori Design Standards.</li>
+            <li>Entwicklung eines Test Automation Data Management Tools (Testdatengenerierung, UFT-Test-Triggering).</li>
+            <li>Entwicklung eines Custom Transport Management Systems zur Optimierung der SAP-Landschaftsoperationen.</li>
+            <li>Erstellung von Frontend-Prototypen für Business Proposals und Demos in kurzer Zeit.</li>
+            <li>Schulung und Mentoring von Junior-Teammitgliedern in SAP UI5 und Fiori Best Practices.</li>
+          </ul>
+          <div class="tech-chips">
+            <span class="tech-chip">SAP UI5</span><span class="tech-chip">SAP Fiori</span>
+            <span class="tech-chip">OAuth 2.0 / OIDC</span><span class="tech-chip">UFT</span>
+            <span class="tech-chip">JavaScript</span><span class="tech-chip">OData</span>
+          </div>
+        </div>
+
+        <!-- Infosys -->
+        <div class="exp-entry">
+          <div class="exp-header">
+            <div class="exp-title">Associate Consultant</div>
+            <div class="exp-date">Aug. 2018 – Jun. 2020</div>
+          </div>
+          <div class="exp-company">Infosys Limited</div>
+          <div class="exp-location">Bengaluru, Indien · Vor Ort · Kunde: Daimler (Mercedes-Benz R&amp;D India)</div>
+          <div class="exp-project">💳 Mercedes-Benz Financial Services (Fiori-Implementierung)</div>
+          <ul class="exp-list">
+            <li>Entwicklung und Implementierung maßgeschneiderter Fiori-Applikationen für Mercedes-Benz Financial Services.</li>
+            <li>Integration von Frontend mit SAP NetWeaver OData-Services; Erweiterung von Standard-Fiori-Applikationen.</li>
+            <li>Aufbau einer wiederverwendbaren JavaScript-Bibliothek für UI-Komponenten.</li>
+            <li>Konfiguration von Fiori Launchpad Tiles, Rollen und Katalogen in der Kundenumgebung.</li>
+            <li>Integration externer APIs in Fiori-Applikationen.</li>
+          </ul>
+          <div class="tech-chips">
+            <span class="tech-chip">SAP UI5</span><span class="tech-chip">SAP Fiori</span>
+            <span class="tech-chip">JavaScript</span><span class="tech-chip">HTML / CSS</span>
+            <span class="tech-chip">OData</span><span class="tech-chip">NetWeaver</span>
+          </div>
+        </div>
+
+        <!-- TCS -->
+        <div class="exp-entry">
+          <div class="exp-header">
+            <div class="exp-title">System Engineer</div>
+            <div class="exp-date">Nov. 2015 – Jul. 2018</div>
+          </div>
+          <div class="exp-company">Tata Consultancy Services (TCS)</div>
+          <div class="exp-location">Indien · Kunde: u. a. Jumbo, Niederlande</div>
+          <div class="exp-project">🏫 SAP Centre of Excellence (CoE) – R&amp;D / Retail</div>
+          <ul class="exp-list">
+            <li>Aufbau und Weiterentwicklung von SAP Fiori- und UI5-Applikationen im SAP Centre of Excellence.</li>
+            <li>Pionierarbeit bei der Entwicklung von Cordova Hybrid Mobile Apps innerhalb des CoE-Teams.</li>
+            <li>Entwicklung von Frontend-Prototypen für Business Proposals; aktive Beteiligung an Produktimplementierungen.</li>
+            <li>Einsatz bei externem Kunden (Jumbo, Niederlande) – SAP Fiori / OData / jQuery.</li>
+          </ul>
+          <div class="tech-chips">
+            <span class="tech-chip">SAP Fiori</span><span class="tech-chip">SAP UI5</span>
+            <span class="tech-chip">JavaScript</span><span class="tech-chip">Cordova</span>
+            <span class="tech-chip">jQuery</span><span class="tech-chip">OpenUI5</span>
+            <span class="tech-chip">Node.js</span><span class="tech-chip">MongoDB</span>
+            <span class="tech-chip">OData</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Ausbildung -->
+      <div class="section">
+        <div class="section-header">
+          <div class="section-icon">🎓</div>
+          <div class="section-title">Ausbildung</div>
+        </div>
+        <div class="edu-entry">
+          <div class="edu-info">
+            <div class="edu-degree">B.E. – Elektro- und Elektronikingenieurwesen</div>
+            <div class="edu-school">Reva Institute of Technology and Management, Bengaluru</div>
+          </div>
+          <div class="edu-year">2011 – 2015</div>
+        </div>
+      </div>
+
+      <!-- Ehrenamt & Engagement -->
+      <div class="section">
+        <div class="section-header">
+          <div class="section-icon">🛡️</div>
+          <div class="section-title">Ehrenamtliches Engagement</div>
+        </div>
+        <div class="vol-entry">
+          <div class="vol-icon">🛡️</div>
+          <div class="vol-info">
+            <div class="vol-role">Zivilschutz-Wart</div>
+            <div class="vol-org">Indian Civil Defence — Katastrophenschutz, Brandschutztraining, Gemeinschaftssicherheit</div>
+            <div class="vol-date">Apr. 2010 – heute</div>
+          </div>
+        </div>
+        <div class="vol-entry">
+          <div class="vol-icon">🪖</div>
+          <div class="vol-info">
+            <div class="vol-role">Corporal – NCC India (National Cadet Corps)</div>
+            <div class="vol-org">NCC &lsquo;C&rsquo;-Zertifikat · Nationaler Army Camp-Teilnehmer · Führungstraining</div>
+            <div class="vol-date">2009 – 2012</div>
+          </div>
+        </div>
+      </div>
+
+    </main>
+  </div><!-- /.body -->
+
+  <footer style="text-align:center; padding:10px 48px; font-size:8pt; color:#94a3b8; border-top:1px solid #e2e8f0; background:#f8fafc;">
+    Bengaluru, September 2026 &nbsp;·&nbsp; Abhilash Biradar &nbsp;·&nbsp; abhilash.bbb@gmail.com
+  </footer>
+
+</div><!-- /.page -->
+</body>
+</html>
