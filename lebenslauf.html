@@ -447,45 +447,55 @@
       }
 
       body { background: #fff !important; font-size: 8pt; margin: 0; padding: 0; }
-
       .page { box-shadow: none !important; max-width: 100% !important; width: 100% !important; margin: 0 !important; }
-
       .print-btn { display: none !important; }
-
       a { color: inherit !important; text-decoration: none !important; }
 
-      /* ── Header ── */
-      .header { padding: 18px 26px 15px !important; gap: 20px !important; }
-      .header-photo { width: 62px !important; height: 62px !important; font-size: 1.5rem !important; }
-      .header-info h1 { font-size: 15pt !important; margin-bottom: 2px !important; }
-      .header-info .role { font-size: 8pt !important; margin-bottom: 9px !important; }
-      .contact-row { font-size: 7pt !important; gap: 3px 13px !important; }
-
-      /* ── Grid ── */
-      .body { grid-template-columns: 162px 1fr !important; }
-
-      /* ── Sidebar ── */
-      .sidebar { padding: 15px 12px !important; }
-      .sidebar-section { margin-bottom: 13px !important; }
-      .sidebar-label { font-size: 6pt !important; margin-bottom: 6px !important; padding-bottom: 3px !important; }
+      /* ── Collapse sidebar into a horizontal strip ── */
+      .body {
+        display: block !important;
+      }
+      .sidebar {
+        border-right: none !important;
+        border-bottom: 1px solid #d1d5db !important;
+        padding: 10px 23px 6px !important;
+        display: flex !important;
+        flex-wrap: wrap !important;
+        gap: 4px 20px !important;
+        align-items: flex-start !important;
+      }
+      .sidebar-section {
+        flex: 0 1 auto !important;
+        min-width: 100px !important;
+        margin-bottom: 8px !important;
+      }
+      .sidebar-label { font-size: 6pt !important; margin-bottom: 5px !important; padding-bottom: 2px !important; }
       .tag { font-size: 6pt !important; padding: 1px 6px !important; }
       .tags { gap: 3px !important; }
-      .lang-item { font-size: 7.5pt !important; margin-bottom: 5px !important; }
-      .cert-item { font-size: 6.5pt !important; margin-bottom: 6px !important; }
+      .lang-item { font-size: 7.5pt !important; margin-bottom: 3px !important; }
+      .lang-level { font-size: 6.5pt !important; }
+      .cert-item { font-size: 6.5pt !important; margin-bottom: 4px !important; }
       .sidebar-text { font-size: 7pt !important; }
-      .skill-group-title { font-size: 7.5pt !important; margin: 6px 0 3px !important; }
+      .skill-group-title { font-size: 7pt !important; margin: 4px 0 2px !important; }
 
-      /* ── Main ── */
-      .main { padding: 15px 23px !important; }
-      .section { margin-bottom: 15px !important; page-break-inside: avoid; break-inside: avoid; }
-      .section-header { margin-bottom: 9px !important; gap: 8px !important; }
-      .section-icon { width: 21px !important; height: 21px !important; font-size: 10px !important; }
+      /* ── Main flows full-width below sidebar ── */
+      .main { padding: 14px 23px !important; }
+      .section { margin-bottom: 14px !important; page-break-inside: avoid; break-inside: avoid; }
+      .section-header { margin-bottom: 8px !important; gap: 8px !important; }
+      .section-icon { width: 20px !important; height: 20px !important; font-size: 10px !important; }
       .section-title { font-size: 10pt !important; }
 
+      /* ── Header ── */
+      .header { padding: 18px 23px 15px !important; gap: 20px !important; }
+      .header-photo { width: 60px !important; height: 60px !important; font-size: 1.5rem !important; }
+      .header-info h1 { font-size: 15pt !important; margin-bottom: 2px !important; }
+      .header-info .role { font-size: 8pt !important; margin-bottom: 8px !important; }
+      .contact-row { font-size: 7pt !important; gap: 3px 12px !important; }
+
       /* ── Profile ── */
-      .profile-text { font-size: 7.5pt !important; line-height: 1.58 !important; }
-      .profile-highlights { margin-top: 9px !important; gap: 9px !important; }
-      .p-stat { padding: 5px 11px !important; min-width: 62px !important; }
+      .profile-text { font-size: 7.5pt !important; line-height: 1.55 !important; }
+      .profile-highlights { margin-top: 8px !important; gap: 8px !important; flex-wrap: wrap !important; }
+      .p-stat { padding: 5px 10px !important; min-width: 60px !important; }
       .p-stat-num { font-size: 11pt !important; }
       .p-stat-label { font-size: 5.5pt !important; }
 
@@ -497,7 +507,7 @@
       .exp-location { font-size: 6.5pt !important; margin-bottom: 5px !important; }
       .exp-project { font-size: 7pt !important; margin: 3px 0 3px !important; }
       ul.exp-list li { font-size: 7pt !important; margin-bottom: 2px !important; line-height: 1.48 !important; }
-      .tech-chips { margin-top: 5px !important; gap: 3px !important; }
+      .tech-chips { margin-top: 4px !important; gap: 3px !important; }
       .tech-chip { font-size: 5.5pt !important; padding: 1px 5px !important; }
 
       /* ── Education & Volunteering ── */
@@ -509,7 +519,7 @@
       .vol-org { font-size: 7pt !important; }
       .vol-date { font-size: 6.5pt !important; }
 
-      footer { padding: 7px 23px !important; font-size: 6.5pt !important; }
+      footer { padding: 6px 23px !important; font-size: 6.5pt !important; }
     }
 
     @page {
