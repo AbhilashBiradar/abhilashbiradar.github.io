@@ -392,12 +392,20 @@
     /* ══════════════════════════════
        PRINT
     ══════════════════════════════ */
-    @page { size: A4; margin: 10mm; }
+    @page { size: A4; margin: 8mm; }
     @media print {
-      body { background: #fff; font-size: 12px; }
+      body { background: #fff; font-size: 11px; line-height: 1.5; }
       .page { margin: 0; border-radius: 0; box-shadow: none; }
-      header { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      header { -webkit-print-color-adjust: exact; print-color-adjust: exact; padding: 24px 36px 20px; }
       .job-date { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .main { padding: 20px 28px; }
+      .sidebar { padding: 20px 16px; }
+      .section { margin-bottom: 18px; }
+      .job { margin-bottom: 14px; }
+      .info-card { padding: 8px 12px; margin-bottom: 10px; }
+      ul.bullets li { margin-bottom: 2px; font-size: 11px; }
+      .project-card { padding: 8px 12px; }
+      .proj-desc { font-size: 11px; }
     }
   </style>
 </head>
@@ -571,12 +579,11 @@
               <span class="job-location">Client: Daimler / Mercedes-Benz R&amp;D India</span>
             </div>
             <ul class="bullets">
-              <li>Engineered backend OData services for the <strong>MIA (Mercedes-Benz Intelligent Architecture)</strong> platform using SAP NetWeaver Gateway, enabling seamless frontend-backend integration across enterprise teams.</li>
-              <li>Designed and administered <strong>SAP Fiori Catalogs and Role management</strong> — structured business catalogs, mapped authorizations, and governed Launchpad access for multiple user personas.</li>
-              <li>Configured <strong>Fiori Launchpad tiles and target mappings</strong> for custom and standard apps, delivering role-based navigation and a consistent user experience across the enterprise portal.</li>
-              <li>Built a custom <strong>Fiori Launchpad shell extension</strong> adding contextual controls and dynamic shell-header behaviour to meet client-specific UX requirements.</li>
-              <li>Optimized OData service performance by refactoring ABAP data models and implementing server-side pagination, significantly reducing API response times.</li>
-              <li>Mentored junior developers and drove cross-functional alignment between SAP and non-SAP engineering teams.</li>
+              <li>Engineered backend OData services for the <strong>MIA (Mercedes-Benz Intelligent Architecture)</strong> platform using SAP NetWeaver Gateway, enabling seamless frontend-backend integration for enterprise teams.</li>
+              <li>Set up and administered <strong>SAP Fiori Catalogs, Roles, and Launchpad tiles</strong> — configured business catalogs, target mappings, user authorizations, and role-based tile visibility across the enterprise portal.</li>
+              <li>Built a custom <strong>Fiori Launchpad shell extension</strong> adding contextual controls and dynamic behaviour per client UX requirements.</li>
+              <li>Optimized OData performance by refactoring ABAP data models and introducing server-side pagination, reducing API response times.</li>
+              <li>Mentored junior developers and drove cross-functional alignment between SAP and non-SAP teams.</li>
             </ul>
           </div>
 
