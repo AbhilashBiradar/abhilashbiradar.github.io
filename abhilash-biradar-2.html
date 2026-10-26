@@ -266,8 +266,8 @@
        PROJECTS
     ══════════════════════════════ */
     .project-grid {
-      display: flex;
-      flex-direction: column;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
       gap: 10px;
     }
 
@@ -628,12 +628,12 @@
         <div class="project-grid">
           <div class="project-card">
             <div class="proj-title">UI5 Table Selection Retention — sap.ui.table Extension</div>
-            <div class="proj-desc">Open-source SAP UI5 solution that preserves row selections in <code>sap.ui.table.Table</code> across sort and filter operations. Implements a custom extended table class with <code>saveSelected</code> toggle, context-path tracking, and overridden selection interval methods.</div>
+            <div class="proj-desc">Open-source SAP UI5 extension that preserves row selections across sort and filter operations using a custom extended table class.</div>
             <a class="proj-link" href="https://gist.github.com/AbhilashBiradar/e2e2eabedaf76b52c7be072f9b358d43" target="_blank">gist.github.com/AbhilashBiradar</a>
           </div>
           <div class="project-card">
-            <div class="proj-title">Karnataka Voter Search — Full-Stack OCR / ML App</div>
-            <div class="proj-desc">Web application using Python OCR + ML pipeline to search voter data from scanned government PDFs. Stack: Node.js, REST API, Python, SAP BTP.</div>
+            <div class="proj-title">Karnataka Voter Search — OCR / ML App</div>
+            <div class="proj-desc">Python OCR + ML pipeline to search Karnataka voter data from scanned government PDFs. Stack: Node.js, REST API, SAP BTP.</div>
           </div>
         </div>
       </div>
