@@ -392,20 +392,13 @@
     /* ══════════════════════════════
        PRINT
     ══════════════════════════════ */
-    @page { size: A4; margin: 8mm; }
+    @page { size: A4; margin: 10mm; }
     @media print {
-      body { background: #fff; font-size: 11px; line-height: 1.5; }
+      body { background: #fff; font-size: 12px; }
       .page { margin: 0; border-radius: 0; box-shadow: none; }
-      header { -webkit-print-color-adjust: exact; print-color-adjust: exact; padding: 24px 36px 20px; }
+      header { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
       .job-date { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
-      .main { padding: 20px 28px; }
-      .sidebar { padding: 20px 16px; }
-      .section { margin-bottom: 18px; }
-      .job { margin-bottom: 14px; }
-      .info-card { padding: 8px 12px; margin-bottom: 10px; }
-      ul.bullets li { margin-bottom: 2px; font-size: 11px; }
-      .project-card { padding: 8px 12px; }
-      .proj-desc { font-size: 11px; }
+      .key-projects { display: none; }
     }
   </style>
 </head>
@@ -623,7 +616,7 @@
       </div>
 
       <!-- PROJECTS -->
-      <div class="section">
+      <div class="section key-projects">
         <div class="section-title">Key Projects &amp; Open Source</div>
         <div class="project-grid">
           <div class="project-card">
