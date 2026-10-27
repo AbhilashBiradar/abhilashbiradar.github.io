@@ -11,11 +11,21 @@
       font-family: "Calibri", "Arial", sans-serif;
       font-size: 11pt;
       line-height: 1.5;
-      color: #000;
+      color: #1a1a2e;
       background: #fff;
       max-width: 780px;
       margin: 0 auto;
-      padding: 28px 32px;
+      padding: 0 0 28px 0;
+    }
+
+    /* ── HEADER BAND ── */
+    .header-band {
+      background: linear-gradient(120deg, #1e2d7d 0%, #3554c7 60%, #5b7ef5 100%);
+      color: #fff;
+      padding: 28px 32px 22px;
+      margin-bottom: 16px;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
     }
 
     /* ── NAME & CONTACT ── */
@@ -24,23 +34,29 @@
       font-weight: 700;
       letter-spacing: 0.3px;
       margin-bottom: 2px;
+      color: #fff;
     }
 
     .title-line {
       font-size: 11.5pt;
-      color: #222;
-      margin-bottom: 6px;
+      color: rgba(255,255,255,0.88);
+      margin-bottom: 8px;
     }
 
     .contact {
       font-size: 10pt;
-      color: #222;
-      margin-bottom: 4px;
+      color: rgba(255,255,255,0.82);
+      margin-bottom: 0;
     }
+
+    .contact a { color: rgba(255,255,255,0.95); text-decoration: none; }
+
+    /* page body padding */
+    .page-body { padding: 0 32px; }
 
     hr {
       border: none;
-      border-top: 1.5px solid #000;
+      border-top: 1.5px solid #3554c7;
       margin: 8px 0;
     }
 
@@ -51,13 +67,16 @@
 
     /* ── SECTIONS ── */
     h2 {
-      font-size: 11pt;
+      font-size: 10.5pt;
       font-weight: 700;
       text-transform: uppercase;
-      letter-spacing: 1.2px;
-      margin: 14px 0 4px 0;
-      border-bottom: 1px solid #000;
+      letter-spacing: 1.4px;
+      margin: 16px 0 5px 0;
+      color: #3554c7;
+      border-bottom: 1.5px solid #3554c7;
       padding-bottom: 2px;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
     }
 
     /* ── EXPERIENCE ── */
@@ -72,17 +91,25 @@
     .job-title {
       font-size: 11pt;
       font-weight: 700;
+      color: #1c1f3a;
     }
 
     .job-date {
       font-size: 10pt;
+      color: #fff;
+      background: #3554c7;
+      padding: 1px 10px;
+      border-radius: 10px;
       white-space: nowrap;
+      font-weight: 500;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
     }
 
     .job-company {
       font-size: 10.5pt;
       font-style: italic;
-      color: #222;
+      color: #3554c7;
       margin-bottom: 4px;
     }
 
@@ -139,25 +166,31 @@
     }
 
     /* ── PRINT ── */
-    @page { size: A4; margin: 14mm 16mm; }
+    @page { size: A4; margin: 0 0 14mm 0; }
     @media print {
       body { padding: 0; font-size: 10.5pt; }
+      .header-band { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .job-date { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      h2 { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
     }
   </style>
 </head>
 <body>
 
   <!-- NAME & CONTACT -->
-  <div class="name">Abhilash Biradar</div>
-  <div class="title-line">SAP BTP Engineer &nbsp;|&nbsp; AI-Native Enterprise Solutions &nbsp;|&nbsp; Cloud-Native &amp; Integrations</div>
-  <div class="contact">
-    Bengaluru, India &nbsp;|&nbsp;
-    abhilash.bbb@gmail.com &nbsp;|&nbsp;
-    +91-9741423871 &nbsp;|&nbsp;
-    linkedin.com/in/abhilash-biradar &nbsp;|&nbsp;
-    github.com/AbhilashBiradar
+  <div class="header-band">
+    <div class="name">Abhilash Biradar</div>
+    <div class="title-line">SAP BTP Engineer &nbsp;|&nbsp; AI-Native Enterprise Solutions &nbsp;|&nbsp; Cloud-Native &amp; Integrations</div>
+    <div class="contact">
+      Bengaluru, India &nbsp;|&nbsp;
+      abhilash.bbb@gmail.com &nbsp;|&nbsp;
+      +91-9741423871 &nbsp;|&nbsp;
+      linkedin.com/in/abhilash-biradar &nbsp;|&nbsp;
+      github.com/AbhilashBiradar
+    </div>
   </div>
-  <hr />
+
+  <div class="page-body">
 
   <!-- SUMMARY -->
   <h2>Professional Summary</h2>
@@ -279,5 +312,8 @@
     <li><strong>Volunteering:</strong> Civil Defence Warden — Indian Civil Defence (Apr 2010 – Present); Corporal — National Cadet Corps India, NCC 'C' Certificate (2009–2012)</li>
   </ul>
 
+  </div><!-- end page-body -->
+
+</div>
 </body>
 </html>
