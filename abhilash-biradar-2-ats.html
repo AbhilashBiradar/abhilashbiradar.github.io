@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Abhilash Biradar — Senior Full-Stack Engineer</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: "Segoe UI", "Calibri", Arial, sans-serif;
+      font-size: 10.5pt;
+      line-height: 1.55;
+      color: #1a1a2e;
+      background: #eef0f8;
+      padding: 32px 0 40px;
+    }
+
+    .page {
+      width: 794px;
+      min-height: 1123px;
+      margin: 0 auto;
+      background: #fff;
+      box-shadow: 0 4px 28px rgba(40,60,140,0.12);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    /* ── HEADER BAND ── */
+    .header-band {
+      background: linear-gradient(120deg, #1e2d7d 0%, #3554c7 60%, #5b7ef5 100%);
+      color: #fff;
+      padding: 32px 40px 26px;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .header-band::after {
+      content: "";
+      position: absolute;
+      right: -60px; top: -60px;
+      width: 260px; height: 260px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.05);
+      pointer-events: none;
+    }
+
+    .name {
+      font-size: 26pt;
+      font-weight: 800;
+      letter-spacing: 0.3px;
+      margin-bottom: 3px;
+      color: #fff;
+    }
+
+    .title-line {
+      font-size: 11pt;
+      color: rgba(255,255,255,0.88);
+      margin-bottom: 14px;
+      font-weight: 400;
+    }
+
+    .stats {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 14px;
+    }
+
+    .stat {
+      background: rgba(0,0,0,0.20);
+      border: 1px solid rgba(255,255,255,0.3);
+      border-radius: 20px;
+      padding: 3px 12px;
+      font-size: 10pt;
+      color: #fff;
+      font-weight: 500;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    .contact {
+      font-size: 9.5pt;
+      color: rgba(255,255,255,0.82);
+      border-top: 1px solid rgba(255,255,255,0.22);
+      padding-top: 10px;
+    }
+
+    .contact a { color: rgba(255,255,255,0.95); text-decoration: none; }
+
+    /* ── PAGE BODY ── */
+    .page-body { padding: 0 40px 32px; }
+
+    /* ── SECTIONS ── */
+    h2 {
+      font-size: 9.5pt;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 1.8px;
+      margin: 20px 0 8px 0;
+      color: #3554c7;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    h2::after {
+      content: "";
+      flex: 1;
+      height: 1.5px;
+      background: linear-gradient(to right, #c5d0f0, transparent);
+      border-radius: 2px;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    /* ── SUMMARY ── */
+    .summary-box {
+      background: #f0f3fd;
+      border-left: 3px solid #3554c7;
+      padding: 11px 16px;
+      border-radius: 0 6px 6px 0;
+      font-size: 10pt;
+      line-height: 1.65;
+      color: #2c2f4a;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    /* ── SKILLS ── */
+    .skills-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .skills-table td {
+      font-size: 10pt;
+      vertical-align: top;
+      padding: 4px 12px 4px 0;
+      width: 50%;
+      line-height: 1.55;
+    }
+
+    .skills-table td strong {
+      color: #3554c7;
+      font-weight: 700;
+    }
+
+    /* ── EXPERIENCE ── */
+    .job {
+      margin-bottom: 14px;
+      padding-left: 14px;
+      border-left: 2.5px solid #c5d0f0;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    .job-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 4px;
+    }
+
+    .job-title {
+      font-size: 11pt;
+      font-weight: 700;
+      color: #1c1f3a;
+    }
+
+    .job-date {
+      font-size: 9.5pt;
+      color: #fff;
+      background: #3554c7;
+      padding: 2px 11px;
+      border-radius: 10px;
+      white-space: nowrap;
+      font-weight: 500;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    .job-company {
+      font-size: 10pt;
+      color: #3554c7;
+      font-weight: 600;
+      margin: 2px 0 6px;
+    }
+
+    ul {
+      padding-left: 16px;
+      margin: 0;
+    }
+
+    li {
+      margin-bottom: 4px;
+      font-size: 10pt;
+      color: #2c2f4a;
+    }
+
+    /* ── PROJECTS ── */
+    .project {
+      margin-bottom: 7px;
+      padding: 8px 12px;
+      background: #f8f9fe;
+      border-left: 3px solid #3554c7;
+      border-radius: 0 5px 5px 0;
+      font-size: 10pt;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    .project-title {
+      font-weight: 700;
+      color: #1c1f3a;
+    }
+
+    /* ── EDUCATION ── */
+    .edu {
+      padding: 8px 12px;
+      border-left: 3px solid #3554c7;
+      background: #f8f9fe;
+      border-radius: 0 5px 5px 0;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    .edu-degree {
+      font-size: 10.5pt;
+      font-weight: 700;
+      color: #1c1f3a;
+    }
+
+    .edu-school {
+      font-size: 10pt;
+      color: #3554c7;
+    }
+
+    /* ── PRINT ── */
+    @page { size: A4; margin: 12mm 15mm; }
+    @media print {
+      body { background: #fff; padding: 0; }
+      .page { width: 100%; min-height: unset; box-shadow: none; border-radius: 0; }
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <!-- HEADER -->
+  <div class="header-band">
+    <div class="name">Abhilash Biradar</div>
+    <div class="title-line">Senior Full-Stack Engineer &nbsp;|&nbsp; Cloud-Native &amp; Enterprise Platforms &nbsp;|&nbsp; SAP BTP · CAP · UI5</div>
+    <div class="stats">
+      <span class="stat"><strong>10+</strong> Years Experience</span>
+      <span class="stat"><strong>SAP Labs</strong> · Product Engineering</span>
+      <span class="stat"><strong>Mercedes-Benz</strong> Projects</span>
+      <span class="stat"><strong>Open Source</strong> Contributor</span>
+    </div>
+    <div class="contact">
+      Bengaluru, India &nbsp;|&nbsp;
+      Abhilash.bbb@gmail.com &nbsp;|&nbsp;
+      +91-9741423871 &nbsp;|&nbsp;
+      linkedin.com/in/abhilash-biradar &nbsp;|&nbsp;
+      github.com/AbhilashBiradar &nbsp;|&nbsp;
+      abhilashbiradar.github.io
+    </div>
+  </div>
+
+  <div class="page-body">
+
+    <!-- SUMMARY -->
+    <h2>Professional Summary</h2>
+    <div class="summary-box">
+      Senior Full-Stack Software Engineer with 10+ years of experience building enterprise-grade, cloud-native
+      applications and platforms. Skilled in designing and developing scalable backend services, REST APIs, modern
+      web applications, CI/CD pipelines, and automated testing frameworks. Currently at SAP Labs India, developing
+      enterprise product platforms used by SAP's global customer base. Strong expertise in Node.js, TypeScript,
+      SAP CAP, SAP UI5/Fiori, OData V4, and SAP BTP — with a proven track record across product engineering and
+      enterprise consulting. Passionate about AI-assisted development, building scalable software, and delivering
+      high-quality products in collaborative, agile engineering environments.
+    </div>
+
+    <!-- SKILLS -->
+    <h2>Technical Skills</h2>
+    <table class="skills-table">
+      <tbody>
+        <tr>
+          <td><strong>Frontend:</strong> SAP UI5, SAP Fiori, Fiori Elements, TypeScript, JavaScript ES6+, HTML5, CSS3, HighChart.js</td>
+          <td><strong>Backend &amp; APIs:</strong> SAP CAP (Node.js), Node.js, OData V2/V4, REST APIs, SAP NetWeaver, MongoDB</td>
+        </tr>
+        <tr>
+          <td><strong>Cloud &amp; DevOps:</strong> SAP BTP, Cloud Foundry, SAP HANA Cloud (HDI), GitHub Actions, CI/CD Pipelines, OAuth 2.0</td>
+          <td><strong>Testing:</strong> QUnit, Jest, wdi5, QMate, httpYac, Bruno, API Testing</td>
+        </tr>
+        <tr>
+          <td><strong>AI &amp; Tools:</strong> GitHub Copilot, Claude AI, SAP Joule, Prompt Engineering, LLM APIs, AI-Assisted Development</td>
+          <td><strong>Practices:</strong> Git, Agile/Scrum, Code Review, Mentoring, Technical Documentation</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- EXPERIENCE -->
+    <h2>Professional Experience</h2>
+
+    <div class="job">
+      <div class="job-header">
+        <span class="job-title">Developer — Full Stack</span>
+        <span class="job-date">Dec 2021 – Present</span>
+      </div>
+      <div class="job-company">SAP Labs India, Bengaluru, India</div>
+      <ul>
+        <li>Leading development of Product Landscape Designer (PLD) and Cross Product Stack Editor (CPSE) — cloud-native apps on SAP BTP managing SAP product lifecycle and system topology.</li>
+        <li>Architected OData V4 services using SAP CAP (Node.js) with SAP HANA HDI containers; drove end-to-end CI/CD automation via GitHub Actions.</li>
+        <li>Built AutoWeaver — an internal SAP tool that converts Chrome-recorded user flows into ready-to-run wdi5 test scripts using the Claude LLM API; includes a post-generation loop to fix from error logs, execute tests, and push to GitHub.</li>
+        <li>Introduced and implemented httpYac for dynamic, variable-driven API testing via .http files — integrated into GitHub Actions CI/CD pipelines as a lightweight, scriptable alternative to Bruno.</li>
+        <li>Built complex SAP UI5 freestyle interfaces with TypeScript, focusing on performance, accessibility, and AI-assisted development.</li>
+        <li>Contributed to Intelligent Landscape Management (ILM) — enabling automated cross-team landscape orchestration on SAP BTP.</li>
+      </ul>
+    </div>
+
+    <div class="job">
+      <div class="job-header">
+        <span class="job-title">Senior Consultant</span>
+        <span class="job-date">Jul 2020 – Dec 2021</span>
+      </div>
+      <div class="job-company">Capgemini India — Client: Daimler / Mercedes-Benz R&amp;D India</div>
+      <ul>
+        <li>Engineered backend OData services for the MIA (Mercedes-Benz Intelligent Architecture) platform using SAP NetWeaver Gateway — enabling seamless frontend-backend integration for enterprise teams.</li>
+        <li>Set up and administered SAP Fiori Catalogs, Roles, and Launchpad tiles — configured business catalogs, target mappings, user authorizations, and role-based tile visibility across the enterprise portal.</li>
+        <li>Built a custom Fiori Launchpad shell extension adding contextual controls and dynamic behaviour per client UX requirements.</li>
+        <li>Optimized OData performance by refactoring ABAP data models and introducing server-side pagination; mentored junior developers and drove cross-functional alignment between SAP and non-SAP teams.</li>
+      </ul>
+    </div>
+
+    <div class="job">
+      <div class="job-header">
+        <span class="job-title">Associate Consultant</span>
+        <span class="job-date">Aug 2018 – Jun 2020</span>
+      </div>
+      <div class="job-company">Infosys Limited — Client: Mercedes-Benz Financial Services</div>
+      <ul>
+        <li>Developed and delivered SAP Fiori applications for Mercedes-Benz Financial Services, covering end-to-end payment approval workflows built on UI5 and OData V2 services.</li>
+        <li>Implemented the Approve Payment Proposal application — digitising the manual finance approval process and reducing approval turnaround time by 40% through automated exception handling and streamlined UX.</li>
+      </ul>
+    </div>
+
+    <div class="job">
+      <div class="job-header">
+        <span class="job-title">System Engineer</span>
+        <span class="job-date">Nov 2015 – Jul 2018</span>
+      </div>
+      <div class="job-company">Tata Consultancy Services (TCS), Bengaluru, India</div>
+      <ul>
+        <li>Developed custom SAP UI5 modules for Optumera™ — TCS's competitive pricing product — integrating REST APIs with SAP HANA analytics to deliver real-time pricing intelligence for retail clients across the Netherlands.</li>
+        <li>Contributed to the SAP Centre of Excellence — built reusable UI5 component libraries and led Fiori wave rollouts across multiple enterprise clients, accelerating delivery and ensuring design consistency.</li>
+      </ul>
+    </div>
+
+    <!-- PROJECTS -->
+    <h2>Key Projects &amp; Open Source</h2>
+
+    <div class="project">
+      <span class="project-title">AutoWeaver</span> —
+      Internal SAP tool that converts Chrome-recorded user flows into ready-to-run wdi5 test scripts using the Claude LLM API. Sends the recording alongside an existing test repo to Claude, which auto-generates page objects and spec files. Features a post-generation agentic loop — fix from error logs, execute, and push to GitHub — all from a single BTP-hosted UI.
+    </div>
+
+    <div class="project">
+      <span class="project-title">ui5-plugin-persist-selection</span> —
+      SAP UI5 npm plugin (MIT, zero dependencies) extending sap.ui.table to persist multi-row selections across sort, filter, and paging. Published on npm · github.com/AbhilashBiradar
+    </div>
+
+    <div class="project">
+      <span class="project-title">Karnataka Voter Search</span> —
+      Python OCR + ML pipeline to search voter data from scanned government PDFs. Stack: Python, Node.js, REST API, SAP BTP.
+    </div>
+
+    <div class="project">
+      <span class="project-title">httpYac Plugin: HTML Reporter</span> —
+      Open-source Node.js plugin generating self-contained HTML test reports from httpYac API test runs. Published on npm.
+    </div>
+
+    <!-- EDUCATION -->
+    <h2>Education</h2>
+    <div class="edu">
+      <div class="edu-degree">B.E. — Electrical &amp; Electronics Engineering</div>
+      <div class="edu-school">Reva Institute of Technology and Management, Bangalore &nbsp;|&nbsp; 2011 – 2015</div>
+    </div>
+
+    <!-- ADDITIONAL -->
+    <h2>Additional</h2>
+    <ul>
+      <li><strong>Languages:</strong> English (Professional), Kannada (Native), Hindi (Conversational)</li>
+      <li><strong>Volunteering:</strong> Civil Defence Warden — Indian Civil Defence (Apr 2010 – Present); Corporal — National Cadet Corps India, NCC 'C' Certificate (2009–2012)</li>
+    </ul>
+
+  </div><!-- end page-body -->
+</div><!-- end page -->
+</body>
+</html>
